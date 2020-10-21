@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProyectoHorus" Class="HorusDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ProyectoHorus;Integrated Security=True" SettingsObjectName="Solution.DAL.Properties.Settings" SettingsPropertyName="ProyectoHorusConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.ActualizarAcceso" Method="ActualizarAcceso">
+    <Parameter Name="IdAcceso" Parameter="idAcceso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Url" Parameter="url" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.RegistrarBitacora" Method="RegistrarBitacora">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Controlador" Parameter="controlador" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Error" Parameter="error" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarBien" Method="ActualizarBien">
+    <Parameter Name="Placa" Parameter="placa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FechaIngreso" Parameter="fechaIngreso" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ValorInicial" Parameter="valorInicial" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Garantia" Parameter="garantia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Observaciones" Parameter="observaciones" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EntregadoBienes" Parameter="entregadoBienes" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IdTipoDepreciacion" Parameter="idTipoDepreciacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdCentroCosto" Parameter="idCentroCosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdEstadoBien" Parameter="idEstadoBien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTipoBien" Parameter="idTipoBien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarBienesIdentificados" Method="ActualizarBienesIdentificados">
+    <Parameter Name="IdBienIdentificado" Parameter="idBienIdentificado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTomaInventario" Parameter="idTomaInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Placa" Parameter="placa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarCentroCosto" Method="ActualizarCentroCosto">
+    <Parameter Name="IdCentroCosto" Parameter="idCentroCosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarEstadoBien" Method="ActualizarEstadoBien">
+    <Parameter Name="IdEstadoBien" Parameter="idEstadoBien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarFuncionario" Method="ActualizarFuncionario">
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdOficina" Parameter="idOficina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NombreCompleto" Parameter="nombreCompleto" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarOficina" Method="ActualizarOficina">
+    <Parameter Name="IdOficina" Parameter="idOficina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarRol" Method="ActualizarRol">
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarTipoBien" Method="ActualizarTipoBien">
+    <Parameter Name="IdTipoBien" Parameter="idTipoBien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarTipoDepreciacion" Method="ActualizarTipoDepreciacion">
+    <Parameter Name="IdTipoDepreciacion" Parameter="idTipoDepreciacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Formula" Parameter="formula" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarTomaInventario" Method="ActualizarTomaInventario">
+    <Parameter Name="IdTomaInventario" Parameter="idTomaInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IdCentroCosto" Parameter="idCentroCosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Titulo" Parameter="titulo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ConsultaAcceso" Method="ConsultaAcceso">
+    <Parameter Name="IdAcceso" Parameter="idAcceso" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaAccesoResult">
+      <Column Name="IdAcceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaBien" Method="ConsultaBien">
+    <Parameter Name="Placa" Parameter="placa" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="ConsultaBienResult">
+      <Column Name="Placa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ValorInicial" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Garantia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EntregadoBienes" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdTipoDepreciacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdCentroCosto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdEstadoBien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdFuncionario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdTipoBien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDepreciacion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CentroCosto" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoBien" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreFuncionario" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="TipoBien" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaBienIdentificado" Method="ConsultaBienIdentificado">
+    <Parameter Name="IdBienIdentificado" Parameter="idBienIdentificado" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaBienIdentificadoResult">
+      <Column Name="IdBienIdentificado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdTomaInventario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TomaInventario" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Bien" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaCentroCosto" Method="ConsultaCentroCosto">
+    <Parameter Name="IdCentroCosto" Parameter="idCentroCosto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaCentroCostoResult">
+      <Column Name="IdCentroCosto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaEstadoBien" Method="ConsultaEstadoBien">
+    <Parameter Name="IdEstadoBien" Parameter="idEstadoBien" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaEstadoBienResult">
+      <Column Name="IdEstadoBien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaFuncionario" Method="ConsultaFuncionario">
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaFuncionarioResult">
+      <Column Name="IdFuncionario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IdOficina" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Contrasena" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Oficina" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaHistorialEstadoXPlaca" Method="ConsultaHistorialEstadoXPlaca">
+    <Parameter Name="Placa" Parameter="placa" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="ConsultaHistorialEstadoXPlacaResult">
+      <Column Name="IdHistorialEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdFuncionario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdEstadoBien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DescripcionBien" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Funcionario" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaHistorialPropietariosXPropietario" Method="ConsultaHistorialPropietariosXPropietario">
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="ConsultaHistorialPropietariosXPropietarioResult">
+      <Column Name="IdHistorialPropietario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdFuncionario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdFuncionarioCambia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DescripcionBien" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Funcionario" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FuncionarioModifica" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaOficina" Method="ConsultaOficina">
+    <Parameter Name="IdOficina" Parameter="idOficina" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaOficinaResult">
+      <Column Name="IdOficina" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarAcceso" Method="ConsultarAcceso">
+    <ElementType Name="ConsultarAccesoResult">
+      <Column Name="IdAcceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarBien" Method="ConsultarBien">
+    <ElementType Name="ConsultarBienResult">
+      <Column Name="Placa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ValorInicial" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Garantia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EntregadoBienes" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdTipoDepreciacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdCentroCosto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdEstadoBien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdFuncionario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdTipoBien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDepreciacion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CentroCosto" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoBien" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreFuncionario" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="TipoBien" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarBienIdentificado" Method="ConsultarBienIdentificado">
+    <ElementType Name="ConsultarBienIdentificadoResult">
+      <Column Name="IdBienIdentificado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdTomaInventario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TomaInventario" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Bien" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarCentroCosto" Method="ConsultarCentroCosto">
+    <ElementType Name="ConsultarCentroCostoResult">
+      <Column Name="IdCentroCosto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarEstadoBien" Method="ConsultarEstadoBien">
+    <ElementType Name="ConsultarEstadoBienResult">
+      <Column Name="IdEstadoBien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarFuncionario" Method="ConsultarFuncionario">
+    <ElementType Name="ConsultarFuncionarioResult">
+      <Column Name="IdFuncionario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IdOficina" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Contrasena" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Oficina" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarHistorialPropietarios" Method="ConsultarHistorialPropietarios">
+    <ElementType Name="ConsultarHistorialPropietariosResult">
+      <Column Name="IdHistorialPropietario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdFuncionario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdFuncionarioCambia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DescripcionBien" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Funcionario" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FuncionarioModifica" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarOficina" Method="ConsultarOficina">
+    <ElementType Name="ConsultarOficinaResult">
+      <Column Name="IdOficina" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaRol" Method="ConsultaRol">
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaRolResult">
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaRolXFuncionario" Method="ConsultaRolXFuncionario" IsComposable="true">
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.ConsultarRol" Method="ConsultarRol">
+    <ElementType Name="ConsultarRolResult">
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarRolXFuncionario" Method="ConsultarRolXFuncionario" IsComposable="true">
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.ConsultarTipoBien" Method="ConsultarTipoBien">
+    <ElementType Name="ConsultarTipoBienResult">
+      <Column Name="IdTipoBien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarTipoDepreciacion" Method="ConsultarTipoDepreciacion">
+    <ElementType Name="ConsultarTipoDepreciacionResult">
+      <Column Name="IdTipoDepreciacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Formula" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarTomaInventario" Method="ConsultarTomaInventario">
+    <Parameter Name="IdTomaInventario" Parameter="idTomaInventario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultarTomaInventarioResult">
+      <Column Name="IdTomaInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdFuncionario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdCentroCosto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Encargado" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CentroCosto" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaTipoBien" Method="ConsultaTipoBien">
+    <Parameter Name="IdTipoBien" Parameter="idTipoBien" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaTipoBienResult">
+      <Column Name="IdTipoBien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaTipoDepreciacion" Method="ConsultaTipoDepreciacion">
+    <Parameter Name="IdTipoDepreciacion" Parameter="idTipoDepreciacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaTipoDepreciacionResult">
+      <Column Name="IdTipoDepreciacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Formula" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaTomaInventario" Method="ConsultaTomaInventario">
+    <ElementType Name="ConsultaTomaInventarioResult">
+      <Column Name="IdTomaInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdFuncionario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdCentroCosto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Encargado" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CentroCosto" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CrearAcceso" Method="CrearAcceso">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Url" Parameter="url" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearAccesosXRol" Method="CrearAccesosXRol">
+    <Parameter Name="IdAcceso" Parameter="idAcceso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearBien" Method="CrearBien">
+    <Parameter Name="Placa" Parameter="placa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FechaIngreso" Parameter="fechaIngreso" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ValorInicial" Parameter="valorInicial" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Garantia" Parameter="garantia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Observaciones" Parameter="observaciones" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EntregadoBienes" Parameter="entregadoBienes" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IdTipoDepreciacion" Parameter="idTipoDepreciacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdCentroCosto" Parameter="idCentroCosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdEstadoBien" Parameter="idEstadoBien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTipoBien" Parameter="idTipoBien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearBienesIdentificados" Method="CrearBienesIdentificados">
+    <Parameter Name="IdTomaInventario" Parameter="idTomaInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Placa" Parameter="placa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearCentroCosto" Method="CrearCentroCosto">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearEstadoBien" Method="CrearEstadoBien">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearFuncionario" Method="CrearFuncionario">
+    <Parameter Name="IdOficina" Parameter="idOficina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NombreCompleto" Parameter="nombreCompleto" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearHistorialEstado" Method="CrearHistorialEstado">
+    <Parameter Name="Placa" Parameter="placa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdEstadoBien" Parameter="idEstadoBien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearHistorialPropietarios" Method="CrearHistorialPropietarios">
+    <Parameter Name="Placa" Parameter="placa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdFuncionarioCambia" Parameter="idFuncionarioCambia" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearOficina" Method="CrearOficina">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearRol" Method="CrearRol">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearRolXFuncionario" Method="CrearRolXFuncionario">
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearTipoBien" Method="CrearTipoBien">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearTipoDepreciacion" Method="CrearTipoDepreciacion">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Formula" Parameter="formula" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearTomaInventario" Method="CrearTomaInventario">
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IdCentroCosto" Parameter="idCentroCosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Titulo" Parameter="titulo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarAcceso" Method="EliminarAcceso">
+    <Parameter Name="IdAcceso" Parameter="idAcceso" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarAccesosXRol" Method="EliminarAccesosXRol">
+    <Parameter Name="IdAccesoXRol" Parameter="idAccesoXRol" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarBien" Method="EliminarBien">
+    <Parameter Name="Placa" Parameter="placa" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarBienIdentificado" Method="EliminarBienIdentificado">
+    <Parameter Name="IdBienIdentificado" Parameter="idBienIdentificado" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarCentroCosto" Method="EliminarCentroCosto">
+    <Parameter Name="IdCentroCosto" Parameter="idCentroCosto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarEstadoBien" Method="EliminarEstadoBien">
+    <Parameter Name="IdEstadoBien" Parameter="idEstadoBien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarFuncionario" Method="EliminarFuncionario">
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarOficina" Method="EliminarOficina">
+    <Parameter Name="IdOficina" Parameter="idOficina" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarRol" Method="EliminarRol">
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarRolXFuncionario" Method="EliminarRolXFuncionario">
+    <Parameter Name="IdRolXFuncionario" Parameter="idRolXFuncionario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarTipoBien" Method="EliminarTipoBien">
+    <Parameter Name="IdTipoBien" Parameter="idTipoBien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarTipoDepreciacion" Method="EliminarTipoDepreciacion">
+    <Parameter Name="IdTipoDepreciacion" Parameter="idTipoDepreciacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarTomaInventario" Method="EliminarTomaInventario">
+    <Parameter Name="IdTomaInventario" Parameter="idTomaInventario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarAccesosXRol" Method="ActualizarAccesosXRol">
+    <Parameter Name="IdAccesoXRol" Parameter="idAccesoXRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdAcceso" Parameter="idAcceso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ConsultaAccesosXRol" Method="ConsultaAccesosXRol">
+    <Parameter Name="IdAccesoXRol" Parameter="idAccesoXRol" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaAccesosXRolResult">
+      <Column Name="IdAccesoXRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdAcceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarAccesosXRol" Method="ConsultarAccesosXRol">
+    <ElementType Name="ConsultarAccesosXRolResult">
+      <Column Name="IdAccesoXRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdAcceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
