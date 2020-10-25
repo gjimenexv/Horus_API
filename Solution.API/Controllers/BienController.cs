@@ -61,11 +61,12 @@ namespace Solution.API.Controllers
                bien.Garantia.Value,
                bien.Observaciones,
                bien.EntregadoBienes.Value,
-               bien.IdTipoDepreciacion.Value,
+               bien.VidaUtil.Value,
                bien.IdCentroCosto.Value,
                bien.IdEstadoBien.Value,
                bien.IdFuncionario,
-               bien.IdTipoBien.Value);
+               bien.IdTipoBien.Value,
+               bien.ModificadoPor);
 
             //TODO: Validar que el correo no existe previamente.
             //TODO: Validacion de que el usuario es unico.
@@ -94,11 +95,12 @@ namespace Solution.API.Controllers
                bien.Garantia.Value,
                bien.Observaciones,
                bien.EntregadoBienes.Value,
-               bien.IdTipoDepreciacion.Value,
+               bien.VidaUtil.Value,
                bien.IdCentroCosto.Value,
                bien.IdEstadoBien.Value,
                bien.IdFuncionario,
-               bien.IdTipoBien.Value);
+               bien.IdTipoBien.Value,
+               bien.ModificadoPor);
 
             if (!result)
             {

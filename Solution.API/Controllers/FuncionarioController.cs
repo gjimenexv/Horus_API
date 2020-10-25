@@ -32,7 +32,7 @@ namespace Solution.API.Controllers
 
         [HttpGet]
         [Route("{IdFuncionario:int}")]
-        public IHttpActionResult GetFuncionario(int IdFuncionario)
+        public IHttpActionResult GetFuncionario(string IdFuncionario)
         {
             ICollection<ConsultaFuncionarioResult> funcionarios = clsF.ConsultaFuncionario(IdFuncionario);
 
@@ -58,7 +58,8 @@ namespace Solution.API.Controllers
                     funcionario.NombreCompleto,
                     funcionario.Usuario,
                     funcionario.Contrasena,
-                    funcionario.CorreoElectronico);
+                    funcionario.CorreoElectronico,
+                    funcionario.ModificadoPor);
 
             //TODO: Validar que el correo no existe previamente.
             //TODO: Validacion de que el usuario es unico.
@@ -85,7 +86,8 @@ namespace Solution.API.Controllers
                      funcionario.NombreCompleto,
                      funcionario.Usuario,
                      funcionario.Contrasena,
-                     funcionario.CorreoElectronico);
+                     funcionario.CorreoElectronico,
+                     funcionario.ModificadoPor);
 
             if (!result)
             {
@@ -97,9 +99,9 @@ namespace Solution.API.Controllers
 
         [HttpDelete]
         [Route("{IdFuncionario:int}")]
-        public IHttpActionResult DeleteFuncionario(int IdFuncionario)
+        public IHttpActionResult DeleteFuncionario(string IdFuncionario)
         {
-            if (IdFuncionario <= 0)
+            if (IdFuncionario.IsNullOrWhiteSpace())
                 return BadRequest("Not a valid student id");
 
             bool result = clsF.EliminarFuncionario(IdFuncionario);

@@ -63,9 +63,9 @@ namespace Solution.DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarAcceso")]
-		public int ActualizarAcceso([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAcceso", DbType="Int")] System.Nullable<int> idAcceso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Url", DbType="VarChar(50)")] string url)
+		public int ActualizarAcceso([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAcceso", DbType="Int")] System.Nullable<int> idAcceso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Url", DbType="VarChar(50)")] string url, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAcceso, descripcion, url);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAcceso, descripcion, url, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -76,73 +76,66 @@ namespace Solution.DAL
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarBien")]
-		public int ActualizarBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaIngreso", DbType="DateTime")] System.Nullable<System.DateTime> fechaIngreso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValorInicial", DbType="Money")] System.Nullable<decimal> valorInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Garantia", DbType="Int")] System.Nullable<int> garantia, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Observaciones", DbType="VarChar(100)")] string observaciones, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EntregadoBienes", DbType="Bit")] System.Nullable<bool> entregadoBienes, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoDepreciacion", DbType="Int")] System.Nullable<int> idTipoDepreciacion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstadoBien", DbType="Int")] System.Nullable<int> idEstadoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="Int")] System.Nullable<int> idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoBien", DbType="Int")] System.Nullable<int> idTipoBien)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarAccesosXRol")]
+		public int ActualizarAccesosXRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAccesoXRol", DbType="Int")] System.Nullable<int> idAccesoXRol, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAcceso", DbType="Int")] System.Nullable<int> idAcceso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdRol", DbType="Int")] System.Nullable<int> idRol)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), placa, descripcion, fechaIngreso, valorInicial, garantia, observaciones, entregadoBienes, idTipoDepreciacion, idCentroCosto, idEstadoBien, idFuncionario, idTipoBien);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAccesoXRol, idAcceso, idRol);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarBien")]
+		public int ActualizarBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaIngreso", DbType="DateTime")] System.Nullable<System.DateTime> fechaIngreso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValorInicial", DbType="Money")] System.Nullable<decimal> valorInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Garantia", DbType="Int")] System.Nullable<int> garantia, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Observaciones", DbType="VarChar(100)")] string observaciones, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EntregadoBienes", DbType="Bit")] System.Nullable<bool> entregadoBienes, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="VidaUtil", DbType="Int")] System.Nullable<int> vidaUtil, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstadoBien", DbType="Int")] System.Nullable<int> idEstadoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="Int")] System.Nullable<int> idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoBien", DbType="Int")] System.Nullable<int> idTipoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), placa, descripcion, fechaIngreso, valorInicial, garantia, observaciones, entregadoBienes, vidaUtil, idCentroCosto, idEstadoBien, idFuncionario, idTipoBien, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarBienesIdentificados")]
-		public int ActualizarBienesIdentificados([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdBienIdentificado", DbType="Int")] System.Nullable<int> idBienIdentificado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTomaInventario", DbType="Int")] System.Nullable<int> idTomaInventario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int ActualizarBienesIdentificados([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdBienIdentificado", DbType="Int")] System.Nullable<int> idBienIdentificado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTomaInventario", DbType="Int")] System.Nullable<int> idTomaInventario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idBienIdentificado, idTomaInventario, fecha, placa, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idBienIdentificado, idTomaInventario, fecha, placa, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarCentroCosto")]
-		public int ActualizarCentroCosto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int ActualizarCentroCosto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCentroCosto, descripcion, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCentroCosto, descripcion, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarEstadoBien")]
-		public int ActualizarEstadoBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstadoBien", DbType="Int")] System.Nullable<int> idEstadoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int ActualizarEstadoBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstadoBien", DbType="Int")] System.Nullable<int> idEstadoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idEstadoBien, descripcion, estado);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarFuncionario")]
-		public int ActualizarFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="Int")] System.Nullable<int> idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdOficina", DbType="Int")] System.Nullable<int> idOficina, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreCompleto", DbType="VarChar(250)")] string nombreCompleto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(30)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoElectronico", DbType="VarChar(150)")] string correoElectronico)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario, idOficina, nombreCompleto, usuario, contrasena, correoElectronico);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idEstadoBien, descripcion, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarOficina")]
-		public int ActualizarOficina([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdOficina", DbType="Int")] System.Nullable<int> idOficina, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int ActualizarOficina([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdOficina", DbType="Int")] System.Nullable<int> idOficina, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idOficina, descripcion, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idOficina, descripcion, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarRol")]
-		public int ActualizarRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdRol", DbType="Int")] System.Nullable<int> idRol, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion)
+		public int ActualizarRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdRol", DbType="Int")] System.Nullable<int> idRol, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idRol, descripcion);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idRol, descripcion, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarTipoBien")]
-		public int ActualizarTipoBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoBien", DbType="Int")] System.Nullable<int> idTipoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int ActualizarTipoBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoBien", DbType="Int")] System.Nullable<int> idTipoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTipoBien, descripcion, estado);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarTipoDepreciacion")]
-		public int ActualizarTipoDepreciacion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoDepreciacion", DbType="Int")] System.Nullable<int> idTipoDepreciacion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Formula", DbType="VarChar(100)")] string formula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTipoDepreciacion, descripcion, formula, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTipoBien, descripcion, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarTomaInventario")]
-		public int ActualizarTomaInventario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTomaInventario", DbType="Int")] System.Nullable<int> idTomaInventario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="VarChar(50)")] string idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(50)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(150)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int ActualizarTomaInventario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTomaInventario", DbType="Int")] System.Nullable<int> idTomaInventario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="VarChar(50)")] string idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(50)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(150)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTomaInventario, idFuncionario, idCentroCosto, titulo, descripcion, fechaInicio, fechaFin, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTomaInventario, idFuncionario, idCentroCosto, titulo, descripcion, fechaInicio, fechaFin, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -151,6 +144,13 @@ namespace Solution.DAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAcceso);
 			return ((ISingleResult<ConsultaAccesoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaAccesosXRol")]
+		public ISingleResult<ConsultaAccesosXRolResult> ConsultaAccesosXRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAccesoXRol", DbType="Int")] System.Nullable<int> idAccesoXRol)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAccesoXRol);
+			return ((ISingleResult<ConsultaAccesosXRolResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaBien")]
@@ -181,13 +181,6 @@ namespace Solution.DAL
 			return ((ISingleResult<ConsultaEstadoBienResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaFuncionario")]
-		public ISingleResult<ConsultaFuncionarioResult> ConsultaFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="Int")] System.Nullable<int> idFuncionario)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario);
-			return ((ISingleResult<ConsultaFuncionarioResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaHistorialEstadoXPlaca")]
 		public ISingleResult<ConsultaHistorialEstadoXPlacaResult> ConsultaHistorialEstadoXPlaca([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa)
 		{
@@ -216,6 +209,13 @@ namespace Solution.DAL
 			return ((ISingleResult<ConsultarAccesoResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarAccesosXRol")]
+		public ISingleResult<ConsultarAccesosXRolResult> ConsultarAccesosXRol()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ConsultarAccesosXRolResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarBien")]
 		public ISingleResult<ConsultarBienResult> ConsultarBien()
 		{
@@ -228,13 +228,6 @@ namespace Solution.DAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<ConsultarBienIdentificadoResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarCentroCosto")]
-		public ISingleResult<ConsultarCentroCostoResult> ConsultarCentroCosto()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<ConsultarCentroCostoResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarEstadoBien")]
@@ -298,13 +291,6 @@ namespace Solution.DAL
 			return ((ISingleResult<ConsultarTipoBienResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarTipoDepreciacion")]
-		public ISingleResult<ConsultarTipoDepreciacionResult> ConsultarTipoDepreciacion()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<ConsultarTipoDepreciacionResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarTomaInventario")]
 		public ISingleResult<ConsultarTomaInventarioResult> ConsultarTomaInventario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTomaInventario", DbType="Int")] System.Nullable<int> idTomaInventario)
 		{
@@ -319,13 +305,6 @@ namespace Solution.DAL
 			return ((ISingleResult<ConsultaTipoBienResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaTipoDepreciacion")]
-		public ISingleResult<ConsultaTipoDepreciacionResult> ConsultaTipoDepreciacion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoDepreciacion", DbType="Int")] System.Nullable<int> idTipoDepreciacion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTipoDepreciacion);
-			return ((ISingleResult<ConsultaTipoDepreciacionResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaTomaInventario")]
 		public ISingleResult<ConsultaTomaInventarioResult> ConsultaTomaInventario()
 		{
@@ -334,9 +313,9 @@ namespace Solution.DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearAcceso")]
-		public int CrearAcceso([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Url", DbType="VarChar(50)")] string url)
+		public int CrearAcceso([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Url", DbType="VarChar(50)")] string url, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, url);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, url, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -348,37 +327,37 @@ namespace Solution.DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearBien")]
-		public int CrearBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaIngreso", DbType="DateTime")] System.Nullable<System.DateTime> fechaIngreso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValorInicial", DbType="Money")] System.Nullable<decimal> valorInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Garantia", DbType="Int")] System.Nullable<int> garantia, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Observaciones", DbType="VarChar(100)")] string observaciones, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EntregadoBienes", DbType="Bit")] System.Nullable<bool> entregadoBienes, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoDepreciacion", DbType="Int")] System.Nullable<int> idTipoDepreciacion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstadoBien", DbType="Int")] System.Nullable<int> idEstadoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="Int")] System.Nullable<int> idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoBien", DbType="Int")] System.Nullable<int> idTipoBien)
+		public int CrearBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaIngreso", DbType="DateTime")] System.Nullable<System.DateTime> fechaIngreso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValorInicial", DbType="Money")] System.Nullable<decimal> valorInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Garantia", DbType="Int")] System.Nullable<int> garantia, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Observaciones", DbType="VarChar(100)")] string observaciones, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EntregadoBienes", DbType="Bit")] System.Nullable<bool> entregadoBienes, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="VidaUtil", DbType="Int")] System.Nullable<int> vidaUtil, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstadoBien", DbType="Int")] System.Nullable<int> idEstadoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="Int")] System.Nullable<int> idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoBien", DbType="Int")] System.Nullable<int> idTipoBien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), placa, descripcion, fechaIngreso, valorInicial, garantia, observaciones, entregadoBienes, idTipoDepreciacion, idCentroCosto, idEstadoBien, idFuncionario, idTipoBien);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), placa, descripcion, fechaIngreso, valorInicial, garantia, observaciones, entregadoBienes, vidaUtil, idCentroCosto, idEstadoBien, idFuncionario, idTipoBien, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearBienesIdentificados")]
-		public int CrearBienesIdentificados([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTomaInventario", DbType="Int")] System.Nullable<int> idTomaInventario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int CrearBienesIdentificados([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTomaInventario", DbType="Int")] System.Nullable<int> idTomaInventario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTomaInventario, fecha, placa, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTomaInventario, fecha, placa, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearCentroCosto")]
-		public int CrearCentroCosto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int CrearCentroCosto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearEstadoBien")]
-		public int CrearEstadoBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int CrearEstadoBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearFuncionario")]
-		public int CrearFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdOficina", DbType="Int")] System.Nullable<int> idOficina, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreCompleto", DbType="VarChar(250)")] string nombreCompleto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(30)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoElectronico", DbType="VarChar(150)")] string correoElectronico)
+		public int CrearFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdOficina", DbType="Int")] System.Nullable<int> idOficina, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreCompleto", DbType="VarChar(250)")] string nombreCompleto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(30)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoElectronico", DbType="VarChar(150)")] string correoElectronico, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idOficina, nombreCompleto, usuario, contrasena, correoElectronico);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idOficina, nombreCompleto, usuario, contrasena, correoElectronico, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -397,16 +376,16 @@ namespace Solution.DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearOficina")]
-		public int CrearOficina([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int CrearOficina([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearRol")]
-		public int CrearRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion)
+		public int CrearRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -418,23 +397,16 @@ namespace Solution.DAL
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearTipoBien")]
-		public int CrearTipoBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int CrearTipoBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, estado);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearTipoDepreciacion")]
-		public int CrearTipoDepreciacion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(100)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Formula", DbType="VarChar(100)")] string formula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, formula, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descripcion, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearTomaInventario")]
-		public int CrearTomaInventario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="VarChar(50)")] string idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(50)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(150)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado)
+		public int CrearTomaInventario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="VarChar(50)")] string idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCentroCosto", DbType="Int")] System.Nullable<int> idCentroCosto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(50)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(150)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario, idCentroCosto, titulo, descripcion, fechaInicio, fechaFin, estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario, idCentroCosto, titulo, descripcion, fechaInicio, fechaFin, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -480,13 +452,6 @@ namespace Solution.DAL
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EliminarFuncionario")]
-		public int EliminarFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="Int")] System.Nullable<int> idFuncionario)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EliminarOficina")]
 		public int EliminarOficina([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdOficina", DbType="Int")] System.Nullable<int> idOficina)
 		{
@@ -515,13 +480,6 @@ namespace Solution.DAL
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EliminarTipoDepreciacion")]
-		public int EliminarTipoDepreciacion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoDepreciacion", DbType="Int")] System.Nullable<int> idTipoDepreciacion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTipoDepreciacion);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EliminarTomaInventario")]
 		public int EliminarTomaInventario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTomaInventario", DbType="Int")] System.Nullable<int> idTomaInventario)
 		{
@@ -529,25 +487,39 @@ namespace Solution.DAL
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarAccesosXRol")]
-		public int ActualizarAccesosXRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAccesoXRol", DbType="Int")] System.Nullable<int> idAccesoXRol, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAcceso", DbType="Int")] System.Nullable<int> idAcceso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdRol", DbType="Int")] System.Nullable<int> idRol)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistrarAuditoria")]
+		public int RegistrarAuditoria([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tabla", DbType="VarChar(50)")] string tabla, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Registro", DbType="VarChar(150)")] string registro, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Accion", DbType="VarChar(100)")] string accion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="VarChar(50)")] string idUsuario)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAccesoXRol, idAcceso, idRol);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tabla, registro, accion, fecha, idUsuario);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaAccesosXRol")]
-		public ISingleResult<ConsultaAccesosXRolResult> ConsultaAccesosXRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAccesoXRol", DbType="Int")] System.Nullable<int> idAccesoXRol)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAccesoXRol);
-			return ((ISingleResult<ConsultaAccesosXRolResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarAccesosXRol")]
-		public ISingleResult<ConsultarAccesosXRolResult> ConsultarAccesosXRol()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarCentroCosto")]
+		public ISingleResult<ConsultarCentroCostoResult> ConsultarCentroCosto()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<ConsultarAccesosXRolResult>)(result.ReturnValue));
+			return ((ISingleResult<ConsultarCentroCostoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaFuncionario")]
+		public ISingleResult<ConsultaFuncionarioResult> ConsultaFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="VarChar(50)")] string idFuncionario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario);
+			return ((ISingleResult<ConsultaFuncionarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EliminarFuncionario")]
+		public int EliminarFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="VarChar(50)")] string idFuncionario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarFuncionario")]
+		public int ActualizarFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="VarChar(50)")] string idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdOficina", DbType="Int")] System.Nullable<int> idOficina, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreCompleto", DbType="VarChar(250)")] string nombreCompleto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(30)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoElectronico", DbType="VarChar(150)")] string correoElectronico, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario, idOficina, nombreCompleto, usuario, contrasena, correoElectronico, modificadoPor);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -559,6 +531,10 @@ namespace Solution.DAL
 		private string _Descripcion;
 		
 		private string _Url;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		public ConsultaAccesoResult()
 		{
@@ -596,7 +572,7 @@ namespace Solution.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="VarChar(150)")]
 		public string Url
 		{
 			get
@@ -608,6 +584,136 @@ namespace Solution.DAL
 				if ((this._Url != value))
 				{
 					this._Url = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ConsultaAccesosXRolResult
+	{
+		
+		private int _IdAccesoXRol;
+		
+		private int _IdAcceso;
+		
+		private int _IdRol;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
+		
+		public ConsultaAccesosXRolResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAccesoXRol", DbType="Int NOT NULL")]
+		public int IdAccesoXRol
+		{
+			get
+			{
+				return this._IdAccesoXRol;
+			}
+			set
+			{
+				if ((this._IdAccesoXRol != value))
+				{
+					this._IdAccesoXRol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAcceso", DbType="Int NOT NULL")]
+		public int IdAcceso
+		{
+			get
+			{
+				return this._IdAcceso;
+			}
+			set
+			{
+				if ((this._IdAcceso != value))
+				{
+					this._IdAcceso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRol", DbType="Int NOT NULL")]
+		public int IdRol
+		{
+			get
+			{
+				return this._IdRol;
+			}
+			set
+			{
+				if ((this._IdRol != value))
+				{
+					this._IdRol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
 				}
 			}
 		}
@@ -630,7 +736,7 @@ namespace Solution.DAL
 		
 		private System.Nullable<bool> _EntregadoBienes;
 		
-		private System.Nullable<int> _IdTipoDepreciacion;
+		private System.Nullable<int> _VidaUtil;
 		
 		private System.Nullable<int> _IdCentroCosto;
 		
@@ -640,7 +746,9 @@ namespace Solution.DAL
 		
 		private System.Nullable<int> _IdTipoBien;
 		
-		private string _TipoDepreciacion;
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		private string _CentroCosto;
 		
@@ -766,18 +874,18 @@ namespace Solution.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTipoDepreciacion", DbType="Int")]
-		public System.Nullable<int> IdTipoDepreciacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VidaUtil", DbType="Int")]
+		public System.Nullable<int> VidaUtil
 		{
 			get
 			{
-				return this._IdTipoDepreciacion;
+				return this._VidaUtil;
 			}
 			set
 			{
-				if ((this._IdTipoDepreciacion != value))
+				if ((this._VidaUtil != value))
 				{
-					this._IdTipoDepreciacion = value;
+					this._VidaUtil = value;
 				}
 			}
 		}
@@ -846,18 +954,34 @@ namespace Solution.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoDepreciacion", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string TipoDepreciacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
 		{
 			get
 			{
-				return this._TipoDepreciacion;
+				return this._ModificadoPor;
 			}
 			set
 			{
-				if ((this._TipoDepreciacion != value))
+				if ((this._ModificadoPor != value))
 				{
-					this._TipoDepreciacion = value;
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
 				}
 			}
 		}
@@ -939,6 +1063,10 @@ namespace Solution.DAL
 		private string _Placa;
 		
 		private System.Nullable<bool> _Estado;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		private string _TomaInventario;
 		
@@ -1024,6 +1152,38 @@ namespace Solution.DAL
 				if ((this._Estado != value))
 				{
 					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
 				}
 			}
 		}
@@ -1180,140 +1340,6 @@ namespace Solution.DAL
 				if ((this._Estado != value))
 				{
 					this._Estado = value;
-				}
-			}
-		}
-	}
-	
-	public partial class ConsultaFuncionarioResult
-	{
-		
-		private string _IdFuncionario;
-		
-		private int _IdOficina;
-		
-		private string _NombreCompleto;
-		
-		private string _Usuario;
-		
-		private string _Contrasena;
-		
-		private string _CorreoElectronico;
-		
-		private string _Oficina;
-		
-		public ConsultaFuncionarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdFuncionario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string IdFuncionario
-		{
-			get
-			{
-				return this._IdFuncionario;
-			}
-			set
-			{
-				if ((this._IdFuncionario != value))
-				{
-					this._IdFuncionario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdOficina", DbType="Int NOT NULL")]
-		public int IdOficina
-		{
-			get
-			{
-				return this._IdOficina;
-			}
-			set
-			{
-				if ((this._IdOficina != value))
-				{
-					this._IdOficina = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreCompleto", DbType="VarChar(250)")]
-		public string NombreCompleto
-		{
-			get
-			{
-				return this._NombreCompleto;
-			}
-			set
-			{
-				if ((this._NombreCompleto != value))
-				{
-					this._NombreCompleto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuario", DbType="VarChar(30)")]
-		public string Usuario
-		{
-			get
-			{
-				return this._Usuario;
-			}
-			set
-			{
-				if ((this._Usuario != value))
-				{
-					this._Usuario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contrasena", DbType="VarChar(30)")]
-		public string Contrasena
-		{
-			get
-			{
-				return this._Contrasena;
-			}
-			set
-			{
-				if ((this._Contrasena != value))
-				{
-					this._Contrasena = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CorreoElectronico", DbType="VarChar(150)")]
-		public string CorreoElectronico
-		{
-			get
-			{
-				return this._CorreoElectronico;
-			}
-			set
-			{
-				if ((this._CorreoElectronico != value))
-				{
-					this._CorreoElectronico = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Oficina", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Oficina
-		{
-			get
-			{
-				return this._Oficina;
-			}
-			set
-			{
-				if ((this._Oficina != value))
-				{
-					this._Oficina = value;
 				}
 			}
 		}
@@ -1632,6 +1658,10 @@ namespace Solution.DAL
 		
 		private bool _Estado;
 		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
+		
 		public ConsultaOficinaResult()
 		{
 		}
@@ -1683,6 +1713,38 @@ namespace Solution.DAL
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
+				}
+			}
+		}
 	}
 	
 	public partial class ConsultarAccesoResult
@@ -1693,6 +1755,10 @@ namespace Solution.DAL
 		private string _Descripcion;
 		
 		private string _Url;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		public ConsultarAccesoResult()
 		{
@@ -1730,7 +1796,7 @@ namespace Solution.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="VarChar(150)")]
 		public string Url
 		{
 			get
@@ -1742,6 +1808,136 @@ namespace Solution.DAL
 				if ((this._Url != value))
 				{
 					this._Url = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ConsultarAccesosXRolResult
+	{
+		
+		private int _IdAccesoXRol;
+		
+		private int _IdAcceso;
+		
+		private int _IdRol;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
+		
+		public ConsultarAccesosXRolResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAccesoXRol", DbType="Int NOT NULL")]
+		public int IdAccesoXRol
+		{
+			get
+			{
+				return this._IdAccesoXRol;
+			}
+			set
+			{
+				if ((this._IdAccesoXRol != value))
+				{
+					this._IdAccesoXRol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAcceso", DbType="Int NOT NULL")]
+		public int IdAcceso
+		{
+			get
+			{
+				return this._IdAcceso;
+			}
+			set
+			{
+				if ((this._IdAcceso != value))
+				{
+					this._IdAcceso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRol", DbType="Int NOT NULL")]
+		public int IdRol
+		{
+			get
+			{
+				return this._IdRol;
+			}
+			set
+			{
+				if ((this._IdRol != value))
+				{
+					this._IdRol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
 				}
 			}
 		}
@@ -1764,7 +1960,7 @@ namespace Solution.DAL
 		
 		private System.Nullable<bool> _EntregadoBienes;
 		
-		private System.Nullable<int> _IdTipoDepreciacion;
+		private System.Nullable<int> _VidaUtil;
 		
 		private System.Nullable<int> _IdCentroCosto;
 		
@@ -1774,7 +1970,9 @@ namespace Solution.DAL
 		
 		private System.Nullable<int> _IdTipoBien;
 		
-		private string _TipoDepreciacion;
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		private string _CentroCosto;
 		
@@ -1900,18 +2098,18 @@ namespace Solution.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTipoDepreciacion", DbType="Int")]
-		public System.Nullable<int> IdTipoDepreciacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VidaUtil", DbType="Int")]
+		public System.Nullable<int> VidaUtil
 		{
 			get
 			{
-				return this._IdTipoDepreciacion;
+				return this._VidaUtil;
 			}
 			set
 			{
-				if ((this._IdTipoDepreciacion != value))
+				if ((this._VidaUtil != value))
 				{
-					this._IdTipoDepreciacion = value;
+					this._VidaUtil = value;
 				}
 			}
 		}
@@ -1980,18 +2178,34 @@ namespace Solution.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoDepreciacion", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string TipoDepreciacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
 		{
 			get
 			{
-				return this._TipoDepreciacion;
+				return this._ModificadoPor;
 			}
 			set
 			{
-				if ((this._TipoDepreciacion != value))
+				if ((this._ModificadoPor != value))
 				{
-					this._TipoDepreciacion = value;
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
 				}
 			}
 		}
@@ -2073,6 +2287,10 @@ namespace Solution.DAL
 		private string _Placa;
 		
 		private System.Nullable<bool> _Estado;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		private string _TomaInventario;
 		
@@ -2162,6 +2380,38 @@ namespace Solution.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TomaInventario", DbType="VarChar(150)")]
 		public string TomaInventario
 		{
@@ -2190,68 +2440,6 @@ namespace Solution.DAL
 				if ((this._Bien != value))
 				{
 					this._Bien = value;
-				}
-			}
-		}
-	}
-	
-	public partial class ConsultarCentroCostoResult
-	{
-		
-		private int _IdCentroCosto;
-		
-		private string _Descripcion;
-		
-		private System.Nullable<bool> _Estado;
-		
-		public ConsultarCentroCostoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCentroCosto", DbType="Int NOT NULL")]
-		public int IdCentroCosto
-		{
-			get
-			{
-				return this._IdCentroCosto;
-			}
-			set
-			{
-				if ((this._IdCentroCosto != value))
-				{
-					this._IdCentroCosto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this._Descripcion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit")]
-		public System.Nullable<bool> Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this._Estado = value;
 				}
 			}
 		}
@@ -2333,6 +2521,10 @@ namespace Solution.DAL
 		private string _Contrasena;
 		
 		private string _CorreoElectronico;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		private string _Oficina;
 		
@@ -2432,6 +2624,38 @@ namespace Solution.DAL
 				if ((this._CorreoElectronico != value))
 				{
 					this._CorreoElectronico = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
 				}
 			}
 		}
@@ -2614,6 +2838,10 @@ namespace Solution.DAL
 		
 		private bool _Estado;
 		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
+		
 		public ConsultarOficinaResult()
 		{
 		}
@@ -2665,6 +2893,38 @@ namespace Solution.DAL
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
+				}
+			}
+		}
 	}
 	
 	public partial class ConsultaRolResult
@@ -2673,6 +2933,10 @@ namespace Solution.DAL
 		private int _IdRol;
 		
 		private string _Descripcion;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		public ConsultaRolResult()
 		{
@@ -2709,6 +2973,38 @@ namespace Solution.DAL
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
+				}
+			}
+		}
 	}
 	
 	public partial class ConsultarRolResult
@@ -2717,6 +3013,10 @@ namespace Solution.DAL
 		private int _IdRol;
 		
 		private string _Descripcion;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		public ConsultarRolResult()
 		{
@@ -2750,6 +3050,38 @@ namespace Solution.DAL
 				if ((this._Descripcion != value))
 				{
 					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
 				}
 			}
 		}
@@ -2817,86 +3149,6 @@ namespace Solution.DAL
 		}
 	}
 	
-	public partial class ConsultarTipoDepreciacionResult
-	{
-		
-		private int _IdTipoDepreciacion;
-		
-		private string _Descripcion;
-		
-		private string _Formula;
-		
-		private System.Nullable<bool> _Estado;
-		
-		public ConsultarTipoDepreciacionResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTipoDepreciacion", DbType="Int NOT NULL")]
-		public int IdTipoDepreciacion
-		{
-			get
-			{
-				return this._IdTipoDepreciacion;
-			}
-			set
-			{
-				if ((this._IdTipoDepreciacion != value))
-				{
-					this._IdTipoDepreciacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this._Descripcion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Formula", DbType="VarChar(100)")]
-		public string Formula
-		{
-			get
-			{
-				return this._Formula;
-			}
-			set
-			{
-				if ((this._Formula != value))
-				{
-					this._Formula = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit")]
-		public System.Nullable<bool> Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this._Estado = value;
-				}
-			}
-		}
-	}
-	
 	public partial class ConsultarTomaInventarioResult
 	{
 		
@@ -2915,6 +3167,10 @@ namespace Solution.DAL
 		private System.Nullable<System.DateTime> _FechaFin;
 		
 		private System.Nullable<bool> _Estado;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		private string _Encargado;
 		
@@ -3052,6 +3308,38 @@ namespace Solution.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Encargado", DbType="VarChar(250)")]
 		public string Encargado
 		{
@@ -3147,86 +3435,6 @@ namespace Solution.DAL
 		}
 	}
 	
-	public partial class ConsultaTipoDepreciacionResult
-	{
-		
-		private int _IdTipoDepreciacion;
-		
-		private string _Descripcion;
-		
-		private string _Formula;
-		
-		private System.Nullable<bool> _Estado;
-		
-		public ConsultaTipoDepreciacionResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTipoDepreciacion", DbType="Int NOT NULL")]
-		public int IdTipoDepreciacion
-		{
-			get
-			{
-				return this._IdTipoDepreciacion;
-			}
-			set
-			{
-				if ((this._IdTipoDepreciacion != value))
-				{
-					this._IdTipoDepreciacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this._Descripcion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Formula", DbType="VarChar(100)")]
-		public string Formula
-		{
-			get
-			{
-				return this._Formula;
-			}
-			set
-			{
-				if ((this._Formula != value))
-				{
-					this._Formula = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit")]
-		public System.Nullable<bool> Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this._Estado = value;
-				}
-			}
-		}
-	}
-	
 	public partial class ConsultaTomaInventarioResult
 	{
 		
@@ -3245,6 +3453,10 @@ namespace Solution.DAL
 		private System.Nullable<System.DateTime> _FechaFin;
 		
 		private System.Nullable<bool> _Estado;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		private string _Encargado;
 		
@@ -3382,6 +3594,38 @@ namespace Solution.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Encargado", DbType="VarChar(250)")]
 		public string Encargado
 		{
@@ -3415,125 +3659,233 @@ namespace Solution.DAL
 		}
 	}
 	
-	public partial class ConsultaAccesosXRolResult
+	public partial class ConsultarCentroCostoResult
 	{
 		
-		private int _IdAccesoXRol;
+		private int _IdCentroCosto;
 		
-		private int _IdAcceso;
+		private string _Descripcion;
 		
-		private int _IdRol;
+		private System.Nullable<bool> _Estado;
 		
-		public ConsultaAccesosXRolResult()
+		public ConsultarCentroCostoResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAccesoXRol", DbType="Int NOT NULL")]
-		public int IdAccesoXRol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCentroCosto", DbType="Int NOT NULL")]
+		public int IdCentroCosto
 		{
 			get
 			{
-				return this._IdAccesoXRol;
+				return this._IdCentroCosto;
 			}
 			set
 			{
-				if ((this._IdAccesoXRol != value))
+				if ((this._IdCentroCosto != value))
 				{
-					this._IdAccesoXRol = value;
+					this._IdCentroCosto = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAcceso", DbType="Int NOT NULL")]
-		public int IdAcceso
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Descripcion
 		{
 			get
 			{
-				return this._IdAcceso;
+				return this._Descripcion;
 			}
 			set
 			{
-				if ((this._IdAcceso != value))
+				if ((this._Descripcion != value))
 				{
-					this._IdAcceso = value;
+					this._Descripcion = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRol", DbType="Int NOT NULL")]
-		public int IdRol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit")]
+		public System.Nullable<bool> Estado
 		{
 			get
 			{
-				return this._IdRol;
+				return this._Estado;
 			}
 			set
 			{
-				if ((this._IdRol != value))
+				if ((this._Estado != value))
 				{
-					this._IdRol = value;
+					this._Estado = value;
 				}
 			}
 		}
 	}
 	
-	public partial class ConsultarAccesosXRolResult
+	public partial class ConsultaFuncionarioResult
 	{
 		
-		private int _IdAccesoXRol;
+		private string _IdFuncionario;
 		
-		private int _IdAcceso;
+		private int _IdOficina;
 		
-		private int _IdRol;
+		private string _NombreCompleto;
 		
-		public ConsultarAccesosXRolResult()
+		private string _Usuario;
+		
+		private string _Contrasena;
+		
+		private string _CorreoElectronico;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
+		
+		private string _Oficina;
+		
+		public ConsultaFuncionarioResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAccesoXRol", DbType="Int NOT NULL")]
-		public int IdAccesoXRol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdFuncionario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string IdFuncionario
 		{
 			get
 			{
-				return this._IdAccesoXRol;
+				return this._IdFuncionario;
 			}
 			set
 			{
-				if ((this._IdAccesoXRol != value))
+				if ((this._IdFuncionario != value))
 				{
-					this._IdAccesoXRol = value;
+					this._IdFuncionario = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAcceso", DbType="Int NOT NULL")]
-		public int IdAcceso
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdOficina", DbType="Int NOT NULL")]
+		public int IdOficina
 		{
 			get
 			{
-				return this._IdAcceso;
+				return this._IdOficina;
 			}
 			set
 			{
-				if ((this._IdAcceso != value))
+				if ((this._IdOficina != value))
 				{
-					this._IdAcceso = value;
+					this._IdOficina = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRol", DbType="Int NOT NULL")]
-		public int IdRol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreCompleto", DbType="VarChar(250)")]
+		public string NombreCompleto
 		{
 			get
 			{
-				return this._IdRol;
+				return this._NombreCompleto;
 			}
 			set
 			{
-				if ((this._IdRol != value))
+				if ((this._NombreCompleto != value))
 				{
-					this._IdRol = value;
+					this._NombreCompleto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuario", DbType="VarChar(30)")]
+		public string Usuario
+		{
+			get
+			{
+				return this._Usuario;
+			}
+			set
+			{
+				if ((this._Usuario != value))
+				{
+					this._Usuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contrasena", DbType="VarChar(30)")]
+		public string Contrasena
+		{
+			get
+			{
+				return this._Contrasena;
+			}
+			set
+			{
+				if ((this._Contrasena != value))
+				{
+					this._Contrasena = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CorreoElectronico", DbType="VarChar(150)")]
+		public string CorreoElectronico
+		{
+			get
+			{
+				return this._CorreoElectronico;
+			}
+			set
+			{
+				if ((this._CorreoElectronico != value))
+				{
+					this._CorreoElectronico = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Oficina", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Oficina
+		{
+			get
+			{
+				return this._Oficina;
+			}
+			set
+			{
+				if ((this._Oficina != value))
+				{
+					this._Oficina = value;
 				}
 			}
 		}

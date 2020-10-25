@@ -13,6 +13,8 @@ namespace Solution.API.Models
         public DateTime? FechaInicio { get; set; }
         public DateTime? FechaFin { get; set; }
         public bool? Estado { get; set; }
+        public string ModificadoPor { get; set; }
+        public DateTime? UltimaVez { get; set; }
 
         public virtual CentroCosto IdCentroCostoNavigation { get; set; }
         public virtual Funcionario IdFuncionarioNavigation { get; set; }

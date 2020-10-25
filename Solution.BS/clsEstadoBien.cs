@@ -40,11 +40,11 @@ namespace Solution.BS
                 throw;
             }
         }
-        public bool CrearEstadoBien(string descripcion, bool estado)
+        public bool CrearEstadoBien(string descripcion, bool estado, string modificadoPor)
         {
             try
             {
-                dc.CrearEstadoBien (descripcion, estado);
+                dc.CrearEstadoBien(descripcion, estado, modificadoPor);
                 return true;
             }
             catch (Exception ex)
@@ -67,11 +67,11 @@ namespace Solution.BS
             }
         }
 
-        public bool ActualizarEstadoBien(int IdEstadoBien, string descripcion, bool estado)
+        public bool ActualizarEstadoBien(int IdEstadoBien, string descripcion, bool estado, string modificadoPor)
         {
             try
             {
-                dc.ActualizarEstadoBien(IdEstadoBien, descripcion, estado);
+                dc.ActualizarEstadoBien(IdEstadoBien, descripcion, estado, modificadoPor);
                 return true;
             }
             catch (Exception ex)

@@ -14,6 +14,8 @@ namespace Solution.API.Models
         public int IdCentroCosto { get; set; }
         public string Descripcion { get; set; }
         public bool? Estado { get; set; }
+        public string ModificadoPor { get; set; }
+        public DateTime? UltimaVez { get; set; }
 
         public virtual ICollection<Bien> Bien { get; set; }
         public virtual ICollection<TomaInventario> TomaInventario { get; set; }

@@ -21,6 +21,8 @@ namespace Solution.API.Models
         public string Usuario { get; set; }
         public string Contrasena { get; set; }
         public string CorreoElectronico { get; set; }
+        public string ModificadoPor { get; set; }
+        public DateTime? UltimaVez { get; set; }
 
         public virtual Oficina IdOficinaNavigation { get; set; }
         public virtual ICollection<Bien> Bien { get; set; }

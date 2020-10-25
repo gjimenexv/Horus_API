@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solution.API.Models
 {
-    public class Bien
+    public partial class Bien
     {
         public Bien()
         {
@@ -19,17 +19,18 @@ namespace Solution.API.Models
         public int? Garantia { get; set; }
         public string Observaciones { get; set; }
         public bool? EntregadoBienes { get; set; }
-        public int? IdTipoDepreciacion { get; set; }
+        public int? VidaUtil { get; set; }
         public int? IdCentroCosto { get; set; }
         public int? IdEstadoBien { get; set; }
         public string IdFuncionario { get; set; }
         public int? IdTipoBien { get; set; }
+        public string ModificadoPor { get; set; }
+        public DateTime? UltimaVez { get; set; }
 
         public virtual CentroCosto IdCentroCostoNavigation { get; set; }
         public virtual EstadoBien IdEstadoBienNavigation { get; set; }
         public virtual Funcionario IdFuncionarioNavigation { get; set; }
         public virtual TipoBien IdTipoBienNavigation { get; set; }
-        public virtual TipoDepreciacion IdTipoDepreciacionNavigation { get; set; }
         public virtual ICollection<BienesIdentificados> BienesIdentificados { get; set; }
         public virtual ICollection<HistorialEstado> HistorialEstado { get; set; }
         public virtual ICollection<HistorialPropietarios> HistorialPropietarios { get; set; }

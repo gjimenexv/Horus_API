@@ -53,11 +53,11 @@ namespace Solution.BS
         //        throw;
         //    }
         //}
-        public bool CrearRol(string descripcion)
+        public bool CrearRol(string descripcion, string modificadoPor)
         {
             try
             {
-                dc.CrearRol(descripcion);
+                dc.CrearRol(descripcion, modificadoPor);
                 return true;
             }
             catch (Exception ex)
@@ -81,11 +81,11 @@ namespace Solution.BS
         }
 
 
-        public bool ActualizarRoles(int IdRol, string descripcion)
+        public bool ActualizarRoles(int IdRol, string descripcion, string modificadoPor)
         {
             try
             {
-                dc.ActualizarRol(IdRol, descripcion);
+                dc.ActualizarRol(IdRol, descripcion, modificadoPor);
                 return true;
             }
             catch (Exception ex)

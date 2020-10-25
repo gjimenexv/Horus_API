@@ -56,7 +56,7 @@ namespace Solution.API.Controllers
             bool result = clsF.CrearHistorialEstado(
                     historial.Placa,
                     historial.IdFuncionario,
-                    historial.FechaHasta,
+                    historial.FechaHasta.Value,
                     historial.IdEstadoBien);
 
             if (!result)

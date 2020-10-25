@@ -13,6 +13,9 @@ namespace Solution.API.Models
         public int IdOficina { get; set; }
         public string Descripcion { get; set; }
         public bool Estado { get; set; }
+        public string ModificadoPor { get; set; }
+        public DateTime? UltimaVez { get; set; }
+
 
         public virtual ICollection<Funcionario> Funcionario { get; set; }
     }

@@ -55,7 +55,8 @@ namespace Solution.API.Controllers
 
             bool result = clsF.CrearEstadoBien(
                     estadobien.Descripcion,
-                    estadobien.Estado);
+                    estadobien.Estado,
+                    estadobien.ModificadoPor);
                     
        
             //TODO: Validar que el correo no existe previamente.
@@ -80,7 +81,8 @@ namespace Solution.API.Controllers
             bool result = clsF.ActualizarEstadoBien(
                 estadobien.IdEstadoBien,     
                 estadobien.Descripcion,
-                estadobien.Estado);
+                estadobien.Estado,
+                estadobien.ModificadoPor);
 
             if (!result)
             {

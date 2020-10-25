@@ -55,8 +55,9 @@ namespace Solution.API.Controllers
 
 
             bool result = clsF.CrearAcceso(
-                    Acceso.Descripcion,
-                    Acceso.Url);
+                  Acceso.Descripcion,
+                  Acceso.Url,
+                  Acceso.ModificadoPor);
 
             //TODO: Validar que el correo no existe previamente.
             //TODO: Validacion de que el usuario es unico.
@@ -79,7 +80,8 @@ namespace Solution.API.Controllers
             bool result = clsF.ActualizarAcceso(
                   Acceso.IdAcceso,
                   Acceso.Descripcion,
-                  Acceso.Url);
+                  Acceso.Url,
+                  Acceso.ModificadoPor);
 
             if (!result)
             {

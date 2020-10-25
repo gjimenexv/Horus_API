@@ -13,6 +13,8 @@ namespace Solution.API.Models
 
         public int IdRol { get; set; }
         public string Descripcion { get; set; }
+        public string ModificadoPor { get; set; }
+        public DateTime? UltimaVez { get; set; }
 
         public virtual ICollection<AccesosXrol> AccesosXrol { get; set; }
         public virtual ICollection<RolXfuncionario> RolXfuncionario { get; set; }

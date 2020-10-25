@@ -54,7 +54,7 @@ namespace Solution.API.Controllers
                 return BadRequest("Información inválida.");
 
 
-            bool result = clsO.CrearOficina(Oficina.Descripcion, Oficina.Estado);
+            bool result = clsO.CrearOficina(Oficina.Descripcion, Oficina.Estado, Oficina.ModificadoPor);
 
             if (!result)
             {
@@ -74,7 +74,8 @@ namespace Solution.API.Controllers
             bool result = clsO.ActualizarOficina(
                      Oficina.IdOficina,
                      Oficina.Descripcion,
-                     Oficina.Estado);
+                     Oficina.Estado,
+                     Oficina.ModificadoPor);
 
             if (!result)
             {

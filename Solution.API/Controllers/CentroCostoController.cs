@@ -56,7 +56,8 @@ namespace Solution.API.Controllers
 
             bool result = clsF.CrearCentroCosto(
                     CentroCosto.Descripcion,
-                    CentroCosto.Estado.ToString());
+                    CentroCosto.Estado.ToString(),
+                    CentroCosto.ModificadoPor);
                
             //TODO: Validar que el correo no existe previamente.
             //TODO: Validacion de que el usuario es unico.
@@ -79,7 +80,8 @@ namespace Solution.API.Controllers
             bool result = clsF.ActualizarCentroCosto(
                   CentroCosto.IdCentroCosto,
                   CentroCosto.Descripcion,
-                  (bool)CentroCosto.Estado);
+                  (bool)CentroCosto.Estado,
+                  CentroCosto.ModificadoPor);
 
             if (!result)
             {

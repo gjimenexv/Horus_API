@@ -54,7 +54,7 @@ namespace Solution.API.Controllers
                 return BadRequest("Información inválida.");
 
 
-            bool result = clsTB.CrearTipoBien(tipobien.Descripcion, (bool)tipobien.Estado);
+            bool result = clsTB.CrearTipoBien(tipobien.Descripcion, (bool)tipobien.Estado, tipobien.ModificadoPor);
 
             if (!result)
             {
@@ -74,7 +74,8 @@ namespace Solution.API.Controllers
             bool result = clsTB.ActualizarTipoBien(
                      tipobien.IdTipoBien,
                      tipobien.Descripcion,
-                     (bool)tipobien.Estado);
+                     (bool)tipobien.Estado,
+                     tipobien.ModificadoPor);
 
             if (!result)
             {

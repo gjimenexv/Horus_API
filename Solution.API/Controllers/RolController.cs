@@ -69,7 +69,7 @@ namespace Solution.API.Controllers
                 return BadRequest("Información inválida.");
 
 
-            bool result = clsR.CrearRol(Rol.Descripcion);
+            bool result = clsR.CrearRol(Rol.Descripcion, Rol.ModificadoPor);
 
             if (!result)
             {
@@ -88,7 +88,8 @@ namespace Solution.API.Controllers
 
             bool result = clsR.ActualizarRoles(
                      Rol.IdRol,
-                     Rol.Descripcion.ToString());
+                     Rol.Descripcion.ToString(),
+                     Rol.ModificadoPor);
 
             if (!result)
             {

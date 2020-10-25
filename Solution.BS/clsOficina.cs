@@ -39,11 +39,11 @@ namespace Solution.BS
                 throw;
             }
         }
-        public bool CrearOficina(string descripcion, Boolean estado)
+        public bool CrearOficina(string descripcion, Boolean estado, string modificadoPor)
         {
             try
             {
-                dc.CrearOficina(descripcion, estado);
+                dc.CrearOficina(descripcion, estado, modificadoPor);
                 return true;
             }
             catch (Exception ex)
@@ -67,11 +67,11 @@ namespace Solution.BS
         }
 
 
-        public bool ActualizarOficina(int IdOficina, string descripcion, Boolean estado)
+        public bool ActualizarOficina(int IdOficina, string descripcion, Boolean estado, string modificadoPor)
         {
             try
             {
-                dc.ActualizarOficina(IdOficina, descripcion, estado);
+                dc.ActualizarOficina(IdOficina, descripcion, estado, modificadoPor);
                 return true;
             }
             catch (Exception ex)

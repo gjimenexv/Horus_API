@@ -39,11 +39,11 @@ namespace Solution.BS
                 throw;
             }
         }
-        public bool CrearAcceso(string descripcion, string url)
+        public bool CrearAcceso(string descripcion, string url,string modificadoPor)
         {
             try
             {
-                dc.CrearAcceso(descripcion, url);
+                dc.CrearAcceso(descripcion, url, modificadoPor);
                 return true;
             }
             catch (Exception ex)
@@ -66,11 +66,11 @@ namespace Solution.BS
             }
         }
 
-        public bool ActualizarAcceso(int idAcceso, string descripcion, string url)
+        public bool ActualizarAcceso(int idAcceso, string descripcion, string url, string modificadoPor)
         {
             try
             {
-                dc.ActualizarAcceso(idAcceso, descripcion, url);
+                dc.ActualizarAcceso(idAcceso, descripcion, url, modificadoPor);
                 return true;
             }
             catch (Exception ex)

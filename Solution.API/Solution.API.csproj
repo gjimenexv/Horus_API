@@ -183,7 +183,6 @@
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\RolXfuncionario.cs" />
     <Compile Include="Models\TipoBien.cs" />
-    <Compile Include="Models\TipoDepreciacion.cs" />
     <Compile Include="Models\TomaInventario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

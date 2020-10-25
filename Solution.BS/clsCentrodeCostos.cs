@@ -39,11 +39,11 @@ namespace Solution.BS
                 throw;
             }
         }
-        public bool CrearCentroCosto(string descripcion,string estado)
+        public bool CrearCentroCosto(string descripcion,string estado, string modificadoPor)
         {
             try
             {
-                dc.CrearCentroCosto(descripcion,Boolean.Parse(estado));
+                dc.CrearCentroCosto(descripcion,Boolean.Parse(estado), modificadoPor);
                 return true;
             }
             catch (Exception ex)
@@ -66,11 +66,11 @@ namespace Solution.BS
             }
         }
 
-        public bool ActualizarCentroCosto(int IdCentroCosto, string descripcion, bool estado)
+        public bool ActualizarCentroCosto(int IdCentroCosto, string descripcion, bool estado, string modificadoPor)
         {
             try
             {
-                dc.ActualizarCentroCosto(IdCentroCosto, descripcion, estado);
+                dc.ActualizarCentroCosto(IdCentroCosto, descripcion, estado, modificadoPor);
                 return true;
             }
             catch (Exception ex)

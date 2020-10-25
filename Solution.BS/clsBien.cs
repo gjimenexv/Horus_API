@@ -40,11 +40,11 @@ namespace Solution.BS
                 throw;
             }
         }
-        public bool CrearBien(string placa, string descripcion, DateTime fechaIngreso, decimal valorInicial, int garantia, string observaciones, bool entregadoBienes, int idTipoDepreciacion, int idCentroCosto, int idEstadoBien, string idFuncionario, int idTipoBien)
+        public bool CrearBien(string placa, string descripcion, DateTime fechaIngreso, decimal valorInicial, int garantia, string observaciones, bool entregadoBienes, int vidaUtil, int idCentroCosto, int idEstadoBien, string idFuncionario, int idTipoBien, string modificadoPor)
         {
             try
             {
-                dc.CrearBien(placa, descripcion, fechaIngreso, valorInicial, garantia, observaciones, entregadoBienes, idTipoDepreciacion, idCentroCosto, idEstadoBien, int.Parse(idFuncionario), idTipoBien);
+                dc.CrearBien(placa, descripcion, fechaIngreso, valorInicial, garantia, observaciones, entregadoBienes, vidaUtil, idCentroCosto, idEstadoBien, int.Parse(idFuncionario), idTipoBien, modificadoPor);
                 return true;
             }
             catch (Exception ex)
@@ -67,11 +67,11 @@ namespace Solution.BS
             }
         }
 
-        public bool ActualizarBien(string placa, string descripcion, DateTime fechaIngreso, decimal valorInicial, int garantia, string observaciones, bool entregadoBienes, int idTipoDepreciacion, int idCentroCosto, int idEstadoBien, string idFuncionario, int idTipoBien)
+        public bool ActualizarBien(string placa, string descripcion, DateTime fechaIngreso, decimal valorInicial, int garantia, string observaciones, bool entregadoBienes, int vidaUtil, int idCentroCosto, int idEstadoBien, string idFuncionario, int idTipoBien, string modificadoPor)
         {
             try
             {
-                dc.ActualizarBien(placa, descripcion, fechaIngreso, valorInicial, garantia, observaciones, entregadoBienes, idTipoDepreciacion, idCentroCosto, idEstadoBien, int.Parse(idFuncionario), idTipoBien);
+                dc.ActualizarBien(placa, descripcion, fechaIngreso, valorInicial, garantia, observaciones, entregadoBienes, vidaUtil, idCentroCosto, idEstadoBien, int.Parse(idFuncionario), idTipoBien, modificadoPor);
                 return true;
             }
             catch (Exception ex)

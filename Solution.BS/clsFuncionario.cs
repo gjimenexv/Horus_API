@@ -27,7 +27,7 @@ namespace Solution.BS
             }
         }
 
-        public List<ConsultaFuncionarioResult> ConsultaFuncionario(int IdFuncionario)
+        public List<ConsultaFuncionarioResult> ConsultaFuncionario(string IdFuncionario)
         {
             try
             {
@@ -40,11 +40,11 @@ namespace Solution.BS
                 throw;
             }
         }
-        public bool CrearFuncionario(int idOficina, string nombreCompleto, string usuario, string contrasena, string correoElectronico)
+        public bool CrearFuncionario(int idOficina, string nombreCompleto, string usuario, string contrasena, string correoElectronico, string modificadoPor)
         {
             try
             {
-                dc.CrearFuncionario(idOficina, nombreCompleto, usuario, contrasena, correoElectronico);
+                dc.CrearFuncionario(idOficina, nombreCompleto, usuario, contrasena, correoElectronico, modificadoPor);
                 return true;
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace Solution.BS
             }
         }
 
-        public bool EliminarFuncionario(int IdFuncionario)
+        public bool EliminarFuncionario(string IdFuncionario)
         {
             try
             {
@@ -68,11 +68,11 @@ namespace Solution.BS
         }
 
 
-        public bool ActualizarFuncionario(string IdFuncionario, int idOficina, string nombreCompleto, string usuario, string contrasena, string correoElectronico)
+        public bool ActualizarFuncionario(string IdFuncionario, int idOficina, string nombreCompleto, string usuario, string contrasena, string correoElectronico, string modificadoPor)
         {
             try
             {
-                dc.ActualizarFuncionario(int.Parse(IdFuncionario), idOficina, nombreCompleto, usuario, contrasena, correoElectronico);
+                dc.ActualizarFuncionario(IdFuncionario, idOficina, nombreCompleto, usuario, contrasena, correoElectronico, modificadoPor);
                 return true;
             }
             catch (Exception ex)
