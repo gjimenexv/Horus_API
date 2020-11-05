@@ -393,3 +393,5 @@ Solution.API/obj/Debug/Solution.API.pdb
 .vs/Horus_API/config/applicationhost.config
 .vs/Horus_API/v16/.suo
 Solution.API/obj/
+Solution.API/bin/
+packages/

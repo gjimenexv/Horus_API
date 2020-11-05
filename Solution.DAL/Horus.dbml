@@ -558,4 +558,11 @@
     <Parameter Name="ModificadoPor" Parameter="modificadoPor" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.AutenticarUsuario" Method="AutenticarUsuario">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="AutenticarUsuarioResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

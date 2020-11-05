@@ -521,6 +521,13 @@ namespace Solution.DAL
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario, idOficina, nombreCompleto, usuario, contrasena, correoElectronico, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AutenticarUsuario")]
+		public ISingleResult<AutenticarUsuarioResult> AutenticarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(30)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contrasena);
+			return ((ISingleResult<AutenticarUsuarioResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class ConsultaAccesoResult
@@ -3886,6 +3893,32 @@ namespace Solution.DAL
 				if ((this._Oficina != value))
 				{
 					this._Oficina = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AutenticarUsuarioResult
+	{
+		
+		private int _Column1;
+		
+		public AutenticarUsuarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int NOT NULL")]
+		public int Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
 				}
 			}
 		}
