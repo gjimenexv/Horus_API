@@ -45,10 +45,12 @@
     <Compile Include="clsAcceso.cs" />
     <Compile Include="clsAccesosXRol.cs" />
     <Compile Include="clsBien.cs" />
+    <Compile Include="clsBitacora.cs" />
     <Compile Include="clsCentrodeCostos.cs" />
     <Compile Include="clsEstadoBien.cs" />
     <Compile Include="clsFuncionario.cs" />
     <Compile Include="clsHistorialEstado.cs" />
+    <Compile Include="clsLogin.cs" />
     <Compile Include="clsOficina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="clsRol.cs" />
