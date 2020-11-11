@@ -7,6 +7,8 @@ using System.Web.Http;
 using Solution.API.Models;
 using Solution.BS;
 using Solution.DAL;
+using Solution.API.Tools;
+using System.Configuration;
 
 namespace Solution.API.Controllers
 {
@@ -39,9 +41,12 @@ namespace Solution.API.Controllers
             if (login == null)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+            var SecretKey = ConfigurationManager.AppSettings["SecretKey"];
+            login.Contrasena = Seguridad.EncryptString(SecretKey, login.Contrasena);
+
             ICollection<AutenticarUsuarioResult> funcionario = clsL.AutenticarUsuario(login.Usuario, login.Contrasena);
 
-            if (funcionario.Count == 0)
+            if (!funcionario.Equals(0))
             {
                 var token = TokenGenerator.GenerateTokenJwt(login.Usuario);
                 return Ok(token);

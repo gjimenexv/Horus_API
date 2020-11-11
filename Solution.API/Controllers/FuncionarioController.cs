@@ -2,9 +2,11 @@
 using Solution.BS;
 using Solution.DAL;
 using Solution.API.Models;
+using Solution.API.Tools;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Configuration;
 
 namespace Solution.API.Controllers
 {
@@ -13,6 +15,7 @@ namespace Solution.API.Controllers
     {
         //Instaciar una clase funcianario desde BS para poder acceder a los metodos del CRUD
         clsFuncionario clsF = new clsFuncionario();
+        string SecretKey = ConfigurationManager.AppSettings["SecretKey"];
 
 
         [HttpGet]
@@ -52,6 +55,8 @@ namespace Solution.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("Invalid data.");
 
+            
+            funcionario.Contrasena = Seguridad.EncryptString(SecretKey, funcionario.Contrasena);
 
             bool result = clsF.CrearFuncionario(
                     funcionario.IdOficina,
@@ -80,6 +85,7 @@ namespace Solution.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("Not a valid model");
 
+            funcionario.Contrasena = Seguridad.EncryptString(SecretKey, funcionario.Contrasena);
             bool result = clsF.ActualizarFuncionario(
                      funcionario.IdFuncionario,
                      funcionario.IdOficina,
