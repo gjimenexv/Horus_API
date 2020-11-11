@@ -5,10 +5,12 @@ using Solution.API.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Solution.API.Controllers
 {
     [RoutePrefix("api/Oficina")]
+    [EnableCors(origins: "https://localhost:44315", headers: "*", methods: "*")]
     public class OficinaController : ApiController
     {
 
