@@ -3901,24 +3901,78 @@ namespace Solution.DAL
 	public partial class AutenticarUsuarioResult
 	{
 		
-		private int _Column1;
+		private int _IdRol;
+		
+		private string _Descripcion;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
 		
 		public AutenticarUsuarioResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int NOT NULL")]
-		public int Column1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRol", DbType="Int NOT NULL")]
+		public int IdRol
 		{
 			get
 			{
-				return this._Column1;
+				return this._IdRol;
 			}
 			set
 			{
-				if ((this._Column1 != value))
+				if ((this._IdRol != value))
 				{
-					this._Column1 = value;
+					this._IdRol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
 				}
 			}
 		}

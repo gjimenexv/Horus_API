@@ -562,7 +562,10 @@
     <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
     <ElementType Name="AutenticarUsuarioResult">
-      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UltimaVez" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
