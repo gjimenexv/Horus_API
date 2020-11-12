@@ -48,7 +48,7 @@ namespace Solution.API.Controllers
 
         [HttpPost]
         [Route("")]
-        public IHttpActionResult PostCentrodeCostos(CentroCosto CentroCosto)
+        public IHttpActionResult PostCentrodeCostos(CentroCostoModelView CentroCosto)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Invalid data.");
