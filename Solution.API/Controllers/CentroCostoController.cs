@@ -6,10 +6,12 @@ using Solution.API.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Solution.API.Controllers
 {
     [RoutePrefix("api/CentroCosto")]
+    [EnableCors(origins: "https://localhost:44315", headers: "*", methods: "*")]
     public class CentroCostoController : ApiController
     {
         //Instaciar una clase CentrodeCosto desde BS para poder acceder a los metodos del CRUD
