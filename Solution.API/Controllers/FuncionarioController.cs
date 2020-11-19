@@ -7,10 +7,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Configuration;
+using System.Web.Http.Cors;
 
 namespace Solution.API.Controllers
 {
     [RoutePrefix("api/Funcionario")]
+    [EnableCors(origins: "https://localhost:44315", headers: "*", methods: "*")]
     public class FuncionarioController : ApiController
     {
         //Instaciar una clase funcianario desde BS para poder acceder a los metodos del CRUD
