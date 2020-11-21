@@ -528,6 +528,13 @@ namespace Solution.DAL
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario, idCentroCosto, titulo, descripcion, fechaInicio, fechaFin, estado, modificadoPor);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarAuditoria")]
+		public ISingleResult<ConsultarAuditoriaResult> ConsultarAuditoria()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ConsultarAuditoriaResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class ConsultaAccesoResult
@@ -3973,6 +3980,122 @@ namespace Solution.DAL
 				if ((this._CentroCosto != value))
 				{
 					this._CentroCosto = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ConsultarAuditoriaResult
+	{
+		
+		private int _IdAuditoria;
+		
+		private string _Tabla;
+		
+		private string _Registro;
+		
+		private string _Accion;
+		
+		private System.DateTime _Fecha;
+		
+		private string _IdUsuario;
+		
+		public ConsultarAuditoriaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAuditoria", DbType="Int NOT NULL")]
+		public int IdAuditoria
+		{
+			get
+			{
+				return this._IdAuditoria;
+			}
+			set
+			{
+				if ((this._IdAuditoria != value))
+				{
+					this._IdAuditoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tabla", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Tabla
+		{
+			get
+			{
+				return this._Tabla;
+			}
+			set
+			{
+				if ((this._Tabla != value))
+				{
+					this._Tabla = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Registro", DbType="VarChar(MAX)")]
+		public string Registro
+		{
+			get
+			{
+				return this._Registro;
+			}
+			set
+			{
+				if ((this._Registro != value))
+				{
+					this._Registro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Accion", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Accion
+		{
+			get
+			{
+				return this._Accion;
+			}
+			set
+			{
+				if ((this._Accion != value))
+				{
+					this._Accion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string IdUsuario
+		{
+			get
+			{
+				return this._IdUsuario;
+			}
+			set
+			{
+				if ((this._IdUsuario != value))
+				{
+					this._IdUsuario = value;
 				}
 			}
 		}
