@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="clsAcceso.cs" />
     <Compile Include="clsAccesosXRol.cs" />
+    <Compile Include="clsAuditoria.cs" />
     <Compile Include="clsBien.cs" />
     <Compile Include="clsBitacora.cs" />
     <Compile Include="clsCentrodeCostos.cs" />
