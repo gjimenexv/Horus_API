@@ -568,4 +568,14 @@
     <Parameter Name="ModificadoPor" Parameter="modificadoPor" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.ConsultarAuditoria" Method="ConsultarAuditoria">
+    <ElementType Name="ConsultarAuditoriaResult">
+      <Column Name="IdAuditoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tabla" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Registro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Accion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
