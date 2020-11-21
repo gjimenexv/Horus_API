@@ -175,6 +175,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\AccessoRolController.cs" />
+    <Compile Include="Controllers\AuditoriaController.cs" />
     <Compile Include="Controllers\BienController.cs" />
     <Compile Include="Controllers\CentroCostoController.cs" />
     <Compile Include="Controllers\EstadodeBienController.cs" />
@@ -193,6 +194,7 @@
     </Compile>
     <Compile Include="Models\Acceso.cs" />
     <Compile Include="Models\AccesosXrol.cs" />
+    <Compile Include="Models\Auditoria.cs" />
     <Compile Include="Models\Bien.cs" />
     <Compile Include="Models\BienesIdentificados.cs" />
     <Compile Include="Models\Bitacora.cs" />
