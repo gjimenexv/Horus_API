@@ -9,7 +9,7 @@ namespace Solution.BS
 {
     public static class clsBitacora
     {
-
+        //Se registran la bitacora por medio de este metodo. 
         public static bool RegistrarBitacora(int idUsuario, string controlador,string accion, string error, int tipo, DateTime fecha)
         {
             try
@@ -21,6 +21,22 @@ namespace Solution.BS
             catch (Exception ex)
             {
                 return false;
+                throw;
+            }
+        }
+
+        //Capa de negocios en la que se llama el procedimiento almacenado de Consultar de Auditoria para las vistas.
+        public static List<ConsultarBitacoraResult> ConsultarBitacora()
+        {
+            try
+            {
+                HorusDataContext dc = new HorusDataContext();
+                List<ConsultarBitacoraResult> data = dc.ConsultarBitacora().ToList();
+                return data;
+            }
+            catch (Exception ex)
+            {
+
                 throw;
             }
         }
