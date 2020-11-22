@@ -11,7 +11,7 @@ namespace Solution.API.Controllers
     [RoutePrefix("api/Bien")]
     public class BienController : ApiController
     {
-        //Instaciar una clase funcianario desde BS para poder acceder a los metodos del CRUD
+        //Instaciar una clase bien desde BS para poder acceder a los metodos del CRUD
         clsBien clsF = new clsBien();
 
 
