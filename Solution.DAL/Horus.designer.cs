@@ -535,6 +535,13 @@ namespace Solution.DAL
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<ConsultarAuditoriaResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarBitacora")]
+		public ISingleResult<ConsultarBitacoraResult> ConsultarBitacora()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ConsultarBitacoraResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class ConsultaAccesoResult
@@ -4096,6 +4103,140 @@ namespace Solution.DAL
 				if ((this._IdUsuario != value))
 				{
 					this._IdUsuario = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ConsultarBitacoraResult
+	{
+		
+		private int _IdBitacora;
+		
+		private System.Nullable<int> _IdUsuario;
+		
+		private string _Controlador;
+		
+		private string _Accion;
+		
+		private string _Error;
+		
+		private System.Nullable<int> _Tipo;
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+		public ConsultarBitacoraResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdBitacora", DbType="Int NOT NULL")]
+		public int IdBitacora
+		{
+			get
+			{
+				return this._IdBitacora;
+			}
+			set
+			{
+				if ((this._IdBitacora != value))
+				{
+					this._IdBitacora = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="Int")]
+		public System.Nullable<int> IdUsuario
+		{
+			get
+			{
+				return this._IdUsuario;
+			}
+			set
+			{
+				if ((this._IdUsuario != value))
+				{
+					this._IdUsuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Controlador", DbType="VarChar(50)")]
+		public string Controlador
+		{
+			get
+			{
+				return this._Controlador;
+			}
+			set
+			{
+				if ((this._Controlador != value))
+				{
+					this._Controlador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Accion", DbType="VarChar(50)")]
+		public string Accion
+		{
+			get
+			{
+				return this._Accion;
+			}
+			set
+			{
+				if ((this._Accion != value))
+				{
+					this._Accion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Error", DbType="VarChar(MAX)")]
+		public string Error
+		{
+			get
+			{
+				return this._Error;
+			}
+			set
+			{
+				if ((this._Error != value))
+				{
+					this._Error = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tipo", DbType="Int")]
+		public System.Nullable<int> Tipo
+		{
+			get
+			{
+				return this._Tipo;
+			}
+			set
+			{
+				if ((this._Tipo != value))
+				{
+					this._Tipo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
 				}
 			}
 		}
