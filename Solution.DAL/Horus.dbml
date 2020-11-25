@@ -514,16 +514,6 @@
     <Parameter Name="ModificadoPor" Parameter="modificadoPor" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.AutenticarUsuario" Method="AutenticarUsuario">
-    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
-    <ElementType Name="AutenticarUsuarioResult">
-      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="UltimaVez" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.ConsultarTomaInventario" Method="ConsultarTomaInventario">
     <ElementType Name="ConsultarTomaInventarioResult">
       <Column Name="IdTomaInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -588,5 +578,14 @@
       <Column Name="Tipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.AutenticarUsuario" Method="AutenticarUsuario">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ConsultaCorreo" Method="ConsultaCorreo">
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

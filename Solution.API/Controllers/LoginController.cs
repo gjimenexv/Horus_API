@@ -44,16 +44,17 @@ namespace Solution.API.Controllers
             var SecretKey = ConfigurationManager.AppSettings["SecretKey"];
             login.Contrasena = Seguridad.EncryptString(SecretKey, login.Contrasena);
 
-            ICollection<AutenticarUsuarioResult> funcionario = clsL.AutenticarUsuario(login.Usuario, login.Contrasena);
+            int acceso = clsL.AutenticarUsuario(login.Usuario, login.Contrasena);
 
-            if (!funcionario.Equals(0))
-            {
-                var token = TokenGenerator.GenerateTokenJwt(login.Usuario);
-                return Ok(token);
+            if (acceso == 0)
+            {   
+                clsBitacora.RegistrarBitacora(1, "Login", "Autenticar", "Usuario o Contraseña incorrecto",1, DateTime.Now);
+                return Unauthorized();
             }
             else
             {
-                return Unauthorized();
+                var token = TokenGenerator.GenerateTokenJwt(login.Usuario);
+                return Ok(token);
             }
         }
     }
