@@ -146,13 +146,6 @@ namespace Solution.DAL
 			return ((ISingleResult<ConsultaAccesoResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaAccesosXRol")]
-		public ISingleResult<ConsultaAccesosXRolResult> ConsultaAccesosXRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAccesoXRol", DbType="Int")] System.Nullable<int> idAccesoXRol)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAccesoXRol);
-			return ((ISingleResult<ConsultaAccesosXRolResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaBien")]
 		public ISingleResult<ConsultaBienResult> ConsultaBien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Placa", DbType="VarChar(50)")] string placa)
 		{
@@ -536,17 +529,24 @@ namespace Solution.DAL
 			return ((ISingleResult<ConsultarBitacoraResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AutenticarUsuario")]
-		public int AutenticarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(30)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contrasena);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaCorreo")]
 		public int ConsultaCorreo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(150)")] string correo)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), correo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaAccesosXRol")]
+		public ISingleResult<ConsultaAccesosXRolResult> ConsultaAccesosXRol([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAccesoXRol", DbType="Int")] System.Nullable<int> idAccesoXRol)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAccesoXRol);
+			return ((ISingleResult<ConsultaAccesosXRolResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AutenticarUsuario")]
+		public int AutenticarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(30)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contrasena);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -612,104 +612,6 @@ namespace Solution.DAL
 				if ((this._Url != value))
 				{
 					this._Url = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
-		public string ModificadoPor
-		{
-			get
-			{
-				return this._ModificadoPor;
-			}
-			set
-			{
-				if ((this._ModificadoPor != value))
-				{
-					this._ModificadoPor = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
-		public System.Nullable<System.DateTime> UltimaVez
-		{
-			get
-			{
-				return this._UltimaVez;
-			}
-			set
-			{
-				if ((this._UltimaVez != value))
-				{
-					this._UltimaVez = value;
-				}
-			}
-		}
-	}
-	
-	public partial class ConsultaAccesosXRolResult
-	{
-		
-		private int _IdAccesoXRol;
-		
-		private int _IdAcceso;
-		
-		private int _IdRol;
-		
-		private string _ModificadoPor;
-		
-		private System.Nullable<System.DateTime> _UltimaVez;
-		
-		public ConsultaAccesosXRolResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAccesoXRol", DbType="Int NOT NULL")]
-		public int IdAccesoXRol
-		{
-			get
-			{
-				return this._IdAccesoXRol;
-			}
-			set
-			{
-				if ((this._IdAccesoXRol != value))
-				{
-					this._IdAccesoXRol = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAcceso", DbType="Int NOT NULL")]
-		public int IdAcceso
-		{
-			get
-			{
-				return this._IdAcceso;
-			}
-			set
-			{
-				if ((this._IdAcceso != value))
-				{
-					this._IdAcceso = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRol", DbType="Int NOT NULL")]
-		public int IdRol
-		{
-			get
-			{
-				return this._IdRol;
-			}
-			set
-			{
-				if ((this._IdRol != value))
-				{
-					this._IdRol = value;
 				}
 			}
 		}
@@ -4164,6 +4066,104 @@ namespace Solution.DAL
 				if ((this._Fecha != value))
 				{
 					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ConsultaAccesosXRolResult
+	{
+		
+		private int _IdAccesoXRol;
+		
+		private int _IdAcceso;
+		
+		private int _IdRol;
+		
+		private string _ModificadoPor;
+		
+		private System.Nullable<System.DateTime> _UltimaVez;
+		
+		public ConsultaAccesosXRolResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAccesoXRol", DbType="Int NOT NULL")]
+		public int IdAccesoXRol
+		{
+			get
+			{
+				return this._IdAccesoXRol;
+			}
+			set
+			{
+				if ((this._IdAccesoXRol != value))
+				{
+					this._IdAccesoXRol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAcceso", DbType="Int NOT NULL")]
+		public int IdAcceso
+		{
+			get
+			{
+				return this._IdAcceso;
+			}
+			set
+			{
+				if ((this._IdAcceso != value))
+				{
+					this._IdAcceso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRol", DbType="Int NOT NULL")]
+		public int IdRol
+		{
+			get
+			{
+				return this._IdRol;
+			}
+			set
+			{
+				if ((this._IdRol != value))
+				{
+					this._IdRol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificadoPor", DbType="VarChar(50)")]
+		public string ModificadoPor
+		{
+			get
+			{
+				return this._ModificadoPor;
+			}
+			set
+			{
+				if ((this._ModificadoPor != value))
+				{
+					this._ModificadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaVez", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UltimaVez
+		{
+			get
+			{
+				return this._UltimaVez;
+			}
+			set
+			{
+				if ((this._UltimaVez != value))
+				{
+					this._UltimaVez = value;
 				}
 			}
 		}
