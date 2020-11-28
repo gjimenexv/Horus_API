@@ -68,9 +68,7 @@ namespace Solution.API.Controllers
                     funcionario.CorreoElectronico,
                     funcionario.ModificadoPor);
 
-            //TODO: Validar que el correo no existe previamente.
-            //TODO: Validacion de que el usuario es unico.
-            //TODo: Encriptado de la contraseña.
+
 
             if (!result)
             {
@@ -118,6 +116,22 @@ namespace Solution.API.Controllers
                 return BadRequest("Unable to delete");
             }
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("Correo")]
+        public IHttpActionResult GetCorreo(string correo)
+        {
+            int existe = clsF.ConsultaCorreo(correo);
+
+            if (existe == 1)
+            {
+                return BadRequest("El correo ya esta en uso");
+            }
+            else
+            {
+              return Ok();
+            }
         }
     }
 
