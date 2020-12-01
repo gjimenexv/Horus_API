@@ -50,7 +50,7 @@ namespace Solution.API.Controllers
 
         [HttpPost]
         [Route("")]
-        public IHttpActionResult PostOficina(Oficina Oficina)
+        public IHttpActionResult PostOficina(OficinaCreate Oficina)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Información inválida.");
