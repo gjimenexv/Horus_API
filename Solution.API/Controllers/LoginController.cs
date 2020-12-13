@@ -9,6 +9,9 @@ using Solution.BS;
 using Solution.DAL;
 using Solution.API.Tools;
 using System.Configuration;
+using System.Threading.Tasks;
+using System.IO;
+
 
 namespace Solution.API.Controllers
 {
@@ -18,6 +21,7 @@ namespace Solution.API.Controllers
     public class LoginController : ApiController
     {
         clsLogin clsL = new clsLogin();
+        clsFuncionario clsF = new clsFuncionario();
 
         [HttpGet]
         [Route("echoping")]
@@ -36,7 +40,7 @@ namespace Solution.API.Controllers
 
         [HttpPost]
         [Route("authenticate")]
-        public IHttpActionResult Authenticate(LoginRequest login)
+        public async Task<IHttpActionResult> Authenticate([FromBody]LoginRequest login)
         {
             if (login == null)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -55,6 +59,48 @@ namespace Solution.API.Controllers
             {
                 var token = TokenGenerator.GenerateTokenJwt(login.Usuario);
                 return Ok(token);
+            }
+        }
+
+        [HttpPost]
+        [Route("ForgotPassword")]
+        public IHttpActionResult ForgotPassword(ForgotPasswordViewModel email)
+        {
+            if (email == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                if (clsF.ConsultaCorreo(email.Email) == 1)
+                {
+                    string SecretKey = ConfigurationManager.AppSettings["SecretKey"];
+                    var token = Seguridad.EncryptString(SecretKey, email.Email);
+                    string link = string.Format("https://localhost:44315/Login/ResetPassword?token={0}+&email={1}", token, email.Email);
+                    clsF.CrearToken(token, email.Email, "Sistema");
+
+                    //Read template file from the App_Data folder
+                    var sr = new StreamReader("C:\\Users\\Guillermo\\Source\\Repos\\Horus_API\\Solution.API\\App_Data\\Templates\\ResetPassword.txt");
+                    string MailText = sr.ReadToEnd();
+                    sr.Close();
+                    MailText = MailText.Replace("[hreflink]", link);
+                    var MailHelper = new MailHelper
+                    {
+                        Subject = "Solicitud de cambio de contraseña sistema Horus",
+                        Sender = "guillejim5@gmail.com",
+                        Recipient = email.Email,
+                        RecipientCC = null,
+                        Body = MailText
+                    };
+                    MailHelper.Send();
+                    return Ok();
+                }
+                else
+                {
+                    throw new HttpResponseException(HttpStatusCode.BadRequest);
+                }
+                
+                
             }
         }
     }
