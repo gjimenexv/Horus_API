@@ -48,7 +48,7 @@ namespace Solution.API.Controllers
 
         [HttpPost]
         [Route("")]
-        public IHttpActionResult PostTomaInventario(TomaInventario TomaInventario)
+        public IHttpActionResult PostTomaInventario(TomaInventarioModelView TomaInventario)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Información inválida.");
