@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProyectoHorus" Class="HorusDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ProyectoHorus;Integrated Security=True" SettingsObjectName="Solution.DAL.Properties.Settings" SettingsPropertyName="ProyectoHorusConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-CBIS11F\SQLEXPRESS01;Initial Catalog=ProyectoHorus;Integrated Security=True" SettingsObjectName="Solution.DAL.Properties.Settings" SettingsPropertyName="ProyectoHorusConnectionString1" Provider="System.Data.SqlClient" />
   <Function Name="dbo.ActualizarAcceso" Method="ActualizarAcceso">
     <Parameter Name="IdAcceso" Parameter="idAcceso" Type="System.Int32" DbType="Int" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
@@ -612,6 +612,19 @@
     <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
     <ElementType Name="ConsultaRolXFuncionarioResult">
       <Column Name="Rol" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarBienIdentificadoXInventario" Method="ConsultarBienIdentificadoXInventario">
+    <Parameter Name="IdTomaInventario" Parameter="idTomaInventario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultarBienIdentificadoXInventarioResult">
+      <Column Name="IdBienIdentificado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdTomaInventario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UltimaVez" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Bien" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

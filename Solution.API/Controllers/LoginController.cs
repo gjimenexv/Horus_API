@@ -80,7 +80,9 @@ namespace Solution.API.Controllers
                     clsF.CrearToken(token, email.Email, "Sistema");
 
                     //Read template file from the App_Data folder
-                    var sr = new StreamReader("C:\\Users\\Guillermo\\Source\\Repos\\Horus_API\\Solution.API\\App_Data\\Templates\\ResetPassword.txt");
+
+                    string filePath = System.IO.Path.GetFullPath(ConfigurationManager.AppSettings["Template"]);
+                    StreamReader sr = new StreamReader(filePath);
                     string MailText = sr.ReadToEnd();
                     sr.Close();
                     MailText = MailText.Replace("[hreflink]", link);

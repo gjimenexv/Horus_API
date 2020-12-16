@@ -177,6 +177,7 @@
     <Compile Include="Controllers\AccessoRolController.cs" />
     <Compile Include="Controllers\AuditoriaController.cs" />
     <Compile Include="Controllers\BienController.cs" />
+    <Compile Include="Controllers\BienesIdentificadosController.cs" />
     <Compile Include="Controllers\BitacoraController.cs" />
     <Compile Include="Controllers\CentroCostoController.cs" />
     <Compile Include="Controllers\EstadodeBienController.cs" />
