@@ -8,6 +8,8 @@ using System.Linq;
 using System.Web.Http;
 using System.Configuration;
 using System.Web.Http.Cors;
+using System.Net.Http;
+using System.Net;
 
 namespace Solution.API.Controllers
 {
@@ -132,6 +134,55 @@ namespace Solution.API.Controllers
             {
               return Ok();
             }
+        }
+
+        [HttpPost]
+        [Route("CambioContrasena")]
+        public IHttpActionResult PostToken(ResetPasswordEmail email)
+        {
+            int existe = clsF.ConsultaToken(email.Token, email.Email);
+
+            if (existe == 1)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest("No es posible cambiar la contraseña");
+            }
+        }
+
+        [HttpPut]
+        [Route("ActualizarContrasena")]
+        public IHttpActionResult PutContrasena(ResetPassword NewPassword)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Por favor dar todos los datos");
+
+            NewPassword.Password = Seguridad.EncryptString(SecretKey, NewPassword.Password);
+            bool result = clsF.ActualizarContrasena(
+                     NewPassword.Token,
+                     NewPassword.Password,
+                     NewPassword.Email);
+
+            if (!result)
+            {
+                return BadRequest("Incapaz de actualizar la contraseña");
+            }
+            return Ok(NewPassword);
+        }
+
+        [HttpGet]
+        [Route("{Usuario}")]
+        public string GetRol(string usuario)
+        {
+            string rol = clsF.ConsultaRol(usuario);
+
+            if (rol.IsNullOrWhiteSpace())
+            {
+                return null;
+            }
+            return rol;
         }
     }
 

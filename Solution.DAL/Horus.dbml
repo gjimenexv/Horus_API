@@ -295,10 +295,6 @@
       <Column Name="UltimaVez" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.ConsultaRolXFuncionario" Method="ConsultaRolXFuncionario" IsComposable="true">
-    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.Int32" DbType="Int" />
-    <Return Type="object" />
-  </Function>
   <Function Name="dbo.ConsultarRol" Method="ConsultarRol">
     <ElementType Name="ConsultarRolResult">
       <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -587,5 +583,35 @@
     <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ConsultaLogin" Method="ConsultaLogin">
+    <Parameter Name="IdFuncionario" Parameter="idFuncionario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="ConsultaLoginResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CrearToken" Method="CrearToken">
+    <Parameter Name="Token" Parameter="token" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ModificadoPor" Parameter="modificadoPor" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ConsultaToken" Method="ConsultaToken">
+    <Parameter Name="Token" Parameter="token" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarContrasena" Method="ActualizarContrasena">
+    <Parameter Name="Token" Parameter="token" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ContrasenaNueva" Parameter="contrasenaNueva" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ConsultaRolXFuncionario" Method="ConsultaRolXFuncionario">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="ConsultaRolXFuncionarioResult">
+      <Column Name="Rol" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

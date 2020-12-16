@@ -258,12 +258,6 @@ namespace Solution.DAL
 			return ((ISingleResult<ConsultaRolResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaRolXFuncionario", IsComposable=true)]
-		public object ConsultaRolXFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="Int")] System.Nullable<int> idFuncionario)
-		{
-			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario).ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultarRol")]
 		public ISingleResult<ConsultarRolResult> ConsultarRol()
 		{
@@ -548,6 +542,41 @@ namespace Solution.DAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contrasena);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaLogin")]
+		public ISingleResult<ConsultaLoginResult> ConsultaLogin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdFuncionario", DbType="VarChar(50)")] string idFuncionario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contrasena", DbType="VarChar(30)")] string contrasena)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idFuncionario, contrasena);
+			return ((ISingleResult<ConsultaLoginResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearToken")]
+		public int CrearToken([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Token", DbType="VarChar(150)")] string token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoElectronico", DbType="VarChar(150)")] string correoElectronico, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModificadoPor", DbType="VarChar(50)")] string modificadoPor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), token, correoElectronico, modificadoPor);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaToken")]
+		public int ConsultaToken([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Token", DbType="VarChar(150)")] string token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoElectronico", DbType="VarChar(150)")] string correoElectronico)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), token, correoElectronico);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActualizarContrasena")]
+		public int ActualizarContrasena([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Token", DbType="VarChar(150)")] string token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContrasenaNueva", DbType="VarChar(30)")] string contrasenaNueva, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoElectronico", DbType="VarChar(150)")] string correoElectronico)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), token, contrasenaNueva, correoElectronico);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ConsultaRolXFuncionario")]
+		public ISingleResult<ConsultaRolXFuncionarioResult> ConsultaRolXFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(30)")] string usuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
+			return ((ISingleResult<ConsultaRolXFuncionarioResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -4164,6 +4193,58 @@ namespace Solution.DAL
 				if ((this._UltimaVez != value))
 				{
 					this._UltimaVez = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ConsultaLoginResult
+	{
+		
+		private int _Column1;
+		
+		public ConsultaLoginResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int NOT NULL")]
+		public int Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ConsultaRolXFuncionarioResult
+	{
+		
+		private string _Rol;
+		
+		public ConsultaRolXFuncionarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rol", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Rol
+		{
+			get
+			{
+				return this._Rol;
+			}
+			set
+			{
+				if ((this._Rol != value))
+				{
+					this._Rol = value;
 				}
 			}
 		}

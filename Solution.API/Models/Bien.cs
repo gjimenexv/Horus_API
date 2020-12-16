@@ -35,4 +35,20 @@ namespace Solution.API.Models
         public virtual ICollection<HistorialEstado> HistorialEstado { get; set; }
         public virtual ICollection<HistorialPropietarios> HistorialPropietarios { get; set; }
     }
+
+    public class BienFuncionario
+    {
+        public BienFuncionario()
+        {
+            HistorialPropietarios = new HashSet<HistorialPropietarios>();
+        }
+
+        public string Placa { get; set; }
+        public string IdFuncionario { get; set; }
+        public string ModificadoPor { get; set; }
+        public DateTime? UltimaVez { get; set; }
+
+        public virtual Funcionario IdFuncionarioNavigation { get; set; }
+        public virtual ICollection<HistorialPropietarios> HistorialPropietarios { get; set; }
+    }
 }

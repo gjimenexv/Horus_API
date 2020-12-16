@@ -11,11 +11,11 @@ namespace Solution.BS
     {
         HorusDataContext dc = new HorusDataContext();
 
-        public int AutenticarUsuario(string usuario, string contraseña)
+        public int AutenticarUsuario(string usuario, string contrasena)
         {
             try
             {
-                int data = dc.AutenticarUsuario(usuario, contraseña);
+                int data = dc.AutenticarUsuario(usuario, contrasena);
                 return data;
             }
             catch (Exception ex)

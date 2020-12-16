@@ -81,6 +81,20 @@ namespace Solution.BS
             }
         }
 
+        //public bool ActualizarFuncionario()
+        //{
+        //    try
+        //    {
+        //        dc.ActualizarFuncionario();
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        return false;
+        //    }
+        //}
+
     }
 
 }

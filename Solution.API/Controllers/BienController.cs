@@ -109,6 +109,25 @@ namespace Solution.API.Controllers
             return Ok(bien);
         }
 
+        //[HttpPut]
+        //[Route("Placa")]
+        //public IHttpActionResult Put(BienFuncionario bien)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest("Not a valid model");
+
+        //    bool result = clsF.ActualizarBien(
+        //       bien.Placa,
+        //       bien.IdFuncionario,
+        //       bien.ModificadoPor);
+
+        //    if (!result)
+        //    {
+        //        return BadRequest("Unable to update new");
+        //    }
+        //    return Ok(bien);
+        //}
+
 
         [HttpDelete]
         [Route("{Placa}")]
