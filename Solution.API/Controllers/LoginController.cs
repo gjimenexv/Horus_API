@@ -87,7 +87,7 @@ namespace Solution.API.Controllers
                     var MailHelper = new MailHelper
                     {
                         Subject = "Solicitud de cambio de contraseña sistema Horus",
-                        Sender = "guillejim5@gmail.com",
+                        Sender = "proyectohoruscr@gmail.com",
                         Recipient = email.Email,
                         RecipientCC = null,
                         Body = MailText
