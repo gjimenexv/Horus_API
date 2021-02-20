@@ -18,6 +18,8 @@ namespace Solution.API.Models
         public string IdFuncionario { get; set; }
         public int IdOficina { get; set; }
         public string NombreCompleto { get; set; }
+
+        public string Oficina { get; set; }
         public string Usuario { get; set; }
         public string Contrasena { get; set; }
         public string CorreoElectronico { get; set; }
