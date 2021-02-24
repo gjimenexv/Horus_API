@@ -1,0 +1,7 @@
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.DAL\bin\Release\Solution.DAL.dll.config
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.DAL\bin\Release\Solution.DAL.dll
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.DAL\bin\Release\Solution.DAL.pdb
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.DAL\obj\Release\Solution.DAL.csprojAssemblyReference.cache
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.DAL\obj\Release\Solution.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.DAL\obj\Release\Solution.DAL.dll
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.DAL\obj\Release\Solution.DAL.pdb

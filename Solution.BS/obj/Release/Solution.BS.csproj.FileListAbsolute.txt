@@ -1,0 +1,10 @@
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\bin\Release\Solution.BS.dll
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\bin\Release\Solution.BS.pdb
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\bin\Release\Solution.DAL.dll
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\bin\Release\Solution.DAL.pdb
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\bin\Release\Solution.DAL.dll.config
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\obj\Release\Solution.BS.csprojAssemblyReference.cache
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\obj\Release\Solution.BS.csproj.CoreCompileInputs.cache
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\obj\Release\Solution.BS.csproj.CopyComplete
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\obj\Release\Solution.BS.dll
+C:\Users\Guillermo\Source\Repos\Horus_API\Solution.BS\obj\Release\Solution.BS.pdb
