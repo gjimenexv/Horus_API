@@ -33,7 +33,7 @@ namespace Solution.DAL
     #endregion
 		
 		public HorusDataContext() : 
-				base(global::Solution.DAL.Properties.Settings.Default.ProyectoHorusConnectionString1, mappingSource)
+				base(global::Solution.DAL.Properties.Settings.Default.ProyectoHorusConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

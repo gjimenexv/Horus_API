@@ -26,7 +26,7 @@ namespace Solution.DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ProyectoHorus;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=mssql-15997-0.cloudclusters.net,16000;Initial Catalog=ProyectoHorus;Persist Security Info=True;User ID=HorusSA;Password=Horuslcgj2020")]
         public string ProyectoHorusConnectionString {
             get {
                 return ((string)(this["ProyectoHorusConnectionString"]));
