@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace Solution.API.Controllers
 {
-    [RoutePrefix("api/AccessoRol")]
+    [RoutePrefix("api/AccesoRol")]
     public class AccessoXRolController : ApiController
     {
         //Instaciar una clase CentrodeCosto desde BS para poder acceder a los metodos del CRUD
@@ -32,10 +32,10 @@ namespace Solution.API.Controllers
 
 
         [HttpGet]
-        [Route("{IdAccessoXRol:int}")]
-        public IHttpActionResult GetAccessoXRol(int IdAccessoXRol)
+        [Route("{IdRol}/acceso/{IdAcceso}")]
+        public IHttpActionResult GetAccessoXRol(int IdRol, int IdAcceso)
         {
-            ICollection<ConsultaAccesosXRolResult> AccessoXRol = clsF.ConsultaAccessoXRol(IdAccessoXRol);
+            ICollection<ConsultaAccesosXRolResult> AccessoXRol = clsF.ConsultaAccessoXRol(IdRol, IdAcceso);
 
             if (AccessoXRol.Count == 0)
             {

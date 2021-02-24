@@ -26,11 +26,11 @@ namespace Solution.BS
             }
         }
 
-        public List<ConsultaAccesosXRolResult> ConsultaAccessoXRol(int IdAccessoXRol)
+        public List<ConsultaAccesosXRolResult> ConsultaAccessoXRol(int IdRol, int IdAccesso)
         {
             try
             {
-                List<ConsultaAccesosXRolResult> data = dc.ConsultaAccesosXRol(IdAccessoXRol).ToList();
+                List<ConsultaAccesosXRolResult> data = dc.ConsultaAccesosXRol(IdRol,IdAccesso).ToList();
                 return data;
             }
             catch (Exception ex)

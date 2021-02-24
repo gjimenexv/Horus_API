@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProyectoHorus" Class="HorusDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-CBIS11F\SQLEXPRESS01;Initial Catalog=ProyectoHorus;Integrated Security=True" SettingsObjectName="Solution.DAL.Properties.Settings" SettingsPropertyName="ProyectoHorusConnectionString1" Provider="System.Data.SqlClient" />
   <Function Name="dbo.ActualizarAcceso" Method="ActualizarAcceso">
     <Parameter Name="IdAcceso" Parameter="idAcceso" Type="System.Int32" DbType="Int" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
@@ -569,16 +568,6 @@
     <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(150)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.ConsultaAccesosXRol" Method="ConsultaAccesosXRol">
-    <Parameter Name="IdAccesoXRol" Parameter="idAccesoXRol" Type="System.Int32" DbType="Int" />
-    <ElementType Name="ConsultaAccesosXRolResult">
-      <Column Name="IdAccesoXRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IdAcceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="UltimaVez" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.AutenticarUsuario" Method="AutenticarUsuario">
     <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Contrasena" Parameter="contrasena" Type="System.String" DbType="VarChar(30)" />
@@ -625,6 +614,17 @@
       <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="UltimaVez" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Bien" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultaAccesosXRol" Method="ConsultaAccesosXRol">
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdAcceso" Parameter="idAcceso" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultaAccesosXRolResult">
+      <Column Name="IdAccesoXRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdAcceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UltimaVez" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
